@@ -2,25 +2,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #020402;
+  background-color: #000000;
   max-width: 100vw;
 }
 
-h1 a {
+h1 {
   color: aliceblue;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   transition: all 0.3s ease 0s;
 }
 
 h1 span {
-  color: red;
+  color: #2045c0;
 }
 
-/* h1 a:hover {
-  color: #e69c4e;`
-} */
+h1:hover {
+  color: #484f77;
+}
 
 header {
   display: flex;
@@ -29,11 +29,53 @@ header {
   padding: 30px 10%;
 }
 
-.work-title {
-  font-size: 5rem;
+li,
+a {
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  font-size: 20px;
   font-weight: 500;
-  color: white;
-  background-color: transparent;
-  text-align: center;
-  margin-top: 20px;
+  color: #2045c0;
+  text-decoration: none;
 }
+
+.nav_links {
+  list-style: none;
+}
+
+.nav_links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+  color: rgb(255, 255, 255);
+}
+
+/*HERO SECTION*/
+
+.hero-img .hero-text {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  font-size: 3rem;
+}
+
+.hero-img {
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* background-image: url("assets\images\project6.jpg"); */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-position: 80%;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+/*END HERO SECTION*/
