@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 # MOTAR
 
 ## TEAM MOTAR! LETS GO!
@@ -20,3 +22,4 @@ I WANT TO check the most up to date conversion rates
 SO THAT I can make smart financial decisions
 
 - Wireframe/sketch: https://wireframe.cc/lyaNqM
+>>>>>>> f8d6a5a0eb1de8a0f5aabf77b0651e7fa1a87f2d
