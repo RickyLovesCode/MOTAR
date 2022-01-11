@@ -19,4 +19,4 @@ AS a person interested in buying crypto
 I WANT TO check the most up to date conversion rates 
 SO THAT I can make smart financial decisions
 
-- Wireframe/sketch: 
+- Wireframe/sketch: https://wireframe.cc/lyaNqM
