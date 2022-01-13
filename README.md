@@ -4,7 +4,7 @@
 
 this is just a temp READ.me until we code everything out.
 
-PLEASE CREATE A NEW BRANCH TO ADD WORK.
+PLEASE CREATE A NEW BRANCH TO ADD WORK
 
 ![Project checklist screenshot](./images/checklist.png)
 
