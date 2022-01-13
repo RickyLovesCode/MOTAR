@@ -4,13 +4,13 @@
 
 this is just a temp READ.me until we code everything out.
 
-PLEASE CREATE A NEW BRANCH TO ADD WORK.
+PLEASE CREATE A NEW BRANCH TO ADD WORK...
 
 ![Project checklist screenshot](./images/checklist.png)
 
 - Project title: MOTAR (currency convertion)
 - Repository: https://github.com/RickyLovesCode/MOTAR
-- APIs: https://www.coingecko.com/en/api/documentation
+- APIs: https://www.coingecko.com/en/api/documentation & https://marketstack.com/documentation
 - Description:
   WHEN I
   THEN
@@ -20,3 +20,7 @@ PLEASE CREATE A NEW BRANCH TO ADD WORK.
   SO THAT I can make smart financial decisions
 
 - Wireframe/sketch: https://wireframe.cc/lyaNqM
+
+API:
+1-Exchange Rates https://api.coingecko.com/api/v3/exchange_rates
+2
