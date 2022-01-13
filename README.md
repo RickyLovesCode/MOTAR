@@ -21,5 +21,6 @@ SO THAT I can make smart financial decisions
 
 - Wireframe/sketch: https://wireframe.cc/lyaNqM
 
-
-Abe sucks at coding
+API:
+1-Exchange Rates https://api.coingecko.com/api/v3/exchange_rates
+2
