@@ -10,3 +10,16 @@ function getStockEod() {
 }
 
 getStockEod();
+
+var apiUrl  = "https://api.coingecko.com/api/v3/exchange_rates";
+
+function getStockEod() {
+    fetch(apiUrl).then((response) => {
+        console.log(response);
+        response.json().then((data) => {
+            console.log(data)
+        })
+    })
+}
+
+getStockEod();
