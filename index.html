@@ -9,29 +9,34 @@
     <script>
       tailwind.config = {
         theme: {
-          extend: {
-            colors: {
-              clifford: '#da373d',
-            }
-          }
-        }
-      }
+        extend: {
+            screens: {
+                'xl': '1700px',
+                // => @media (min-width: 1700px) { ... }
+            },
+        },
+    },
+}
     </script>
-      <style type="text/tailwindcss">
+      <!-- <style type="text/tailwindcss">
         @layer utilities {
           .content-auto {
             content-visibility: auto;
           }
-        }
+        } -->
       </style>
     <link rel="stylesheet" href="assets\css\style.css" />
+
 </head>
+
 <body>
+
     <!--NAVIGATION-->
-    <div class="container w-full max-w-7xl">
+
+    <div class="container w-full max-w-screen-xl">
       <div x-data="{ open: false }" class="
     flex flex-col
-    max-w-screen-xl
+    max-w-screen-3xl
     p-5
     mx-auto
     md:items-center md:justify-between md:flex-row md:px-6
@@ -39,7 +44,7 @@
     bg-[#000000]
   ">
         <div class="flex flex-row items-center justify-between lg:justify-start">
-          <a href="/" class="
+          <a href="#" class="
         text-lg
         font-bold
         tracking-tighter
@@ -51,32 +56,18 @@
         tracking-relaxed
         lg:pr-8
       "> MOTAR </a>
-          <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
-            <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8">
-              <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-              <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" style="display: none"></path>
-            </svg>
-          </button>
         </div>
         <nav :class="{'flex': open, 'hidden': !open}" class="flex-col items-center flex-grow hidden pb-4 border-blue-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2">
           <a class="
         px-5
         py-2
         mt-2
-        text-sm text-gray-500
+        text-sm text-gray-300
         md:mt-0
-        hover:text-blue-600
+        hover:text-blue-500
         focus:outline-none focus:shadow-outline
       " href="#">About Us</a>
-          <!-- <a class="
-        px-4
-        py-2
-        mt-2
-        text-sm text-gray-500
-        md:mt-0
-        hover:text-blue-600
-        focus:outline-none focus:shadow-outline
-      " href="#">Contact</a> -->
+    
           <div @click.away="open = false" class="relative" x-data="{ open: false }">
             <button @click="open = !open" class="
           flex flex-row
@@ -126,26 +117,7 @@
             </div>
           </div>
           <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
-            <!-- <button class="
-          items-center
-          block
-          px-10
-          py-2.5
-          text-base
-          font-medium
-          text-center text-blue-600
-          transition
-          duration-500
-          ease-in-out
-          transform
-          border-2 border-white
-          shadow-md
-          rounded-xl
-          focus:outline-none
-          focus:ring-2
-          focus:ring-offset-2
-          focus:ring-gray-500
-        "> Sign in </button> -->
+          
             <button class="
           items-center
           block
@@ -158,9 +130,9 @@
           duration-500
           ease-in-out
           transform
-          bg-blue-600
-          rounded-xl
-          hover:bg-blue-700
+          bg-black
+          rounded-3xl
+          hover:bg-blue-600
           focus:outline-none
           focus:ring-2
           focus:ring-offset-2
@@ -174,18 +146,21 @@
     <!--END NAVIGATION-->
 
  <!--MAIN CONTENT-->
+
  <section>
-    <div class="bg-[#000000] px-4 py-12 mx-auto  2xl:max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24 2xl:px-12">
+    <div class="bg-[#000000] px-4 py-12 mx-auto max-w-screen-xl sm:px-6 md:px-12 lg:px-24 lg:py-24 2xl:px-12">
     <div class="flex flex-wrap items-center mx-auto 2xl:max-w-7xl">
       <div class="flex flex-col items-start mb-16 text-left  lg:flex-grow lg:w-1/2 lg:pr-24 md:mb-0">
-        <h1 class="mb-8 text-4xl font-bold leading-none tracking-tighter  text-neutral-600 md:text-7xl lg:text-5xl"> CRYPTO CURRENCY CONVERTER </h1>
+        <!--MAIN HEADER-->
+        <h1 class="mb-8 py-2 px-2 text-4xl font-bold leading-none tracking-tighter text-neutral-400 md:text-7xl lg:text-5xl box-decoration-clone bg-gradient-to-b from-black to-blue-600 rounded-3xl"> CRYPTO CURRENCY CONVERTER </h1>
         <span class="mb-8 text-xs font-bold tracking-widest text-blue-600 uppercase"> HOW TO USE </span>
         <p class="mb-8 text-base leading-relaxed text-left text-gray-400"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus accusantium distinctio optio maiores quidem quasi impedit! Sed cumque fugit quis sunt, quidem quo quam reiciendis in quisquam facilis, repudiandae ipsam. </p>
         <div class="mt-0 lg:mt-6 max-w-7xl sm:flex">
           <div class="mt-3 rounded-lg sm:mt-0">
+        <!--END MAIN HEADER-->
 
             <!--BUTTON CONVERT-->
-            <button class="items-center block px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600  rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"> CONVERT </button>
+            <button class="items-center block px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600  rounded-3xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500 shadow-lg shadow-cyan-600/80 hover:shadow-blue-300/75"> CONVERT </button>
           </div>
           <div class="mt-3 rounded-lg sm:mt-0 sm:ml-3">
           </div>
@@ -196,8 +171,8 @@
       <div class="w-full mt-12 lg:w-5/6 lg:max-w-lg xl:mt-0">
         <div>
           <div class="relative w-full max-w-lg">
-            <div class="absolute top-0 rounded-full  bg-violet-300 -left-4 w-72 h-72 mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-            <div class="absolute rounded-full  bg-fuchsia-300 -bottom-24 right-20 w-72 h-72 mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+            <div class="absolute top-0 rounded-full  bg-blue-600 -left-9 w-80 h-80 mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute rounded-full  bg-blue-600 -bottom-36 right-36 w-80 h-80 mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
             <div class="relative">
               <img class="object-cover object-center mx-auto shadow-2xl" alt="hero" src="assets\images\option1 .jpg">
             </div>
@@ -210,9 +185,195 @@
 
  <!--END MAIN CONTENT-->
 
+ <!--COVERTER SECTION-->
+ <section id="convert-section">
+  <div class="bg-[#ffffff] px-4 py-12 mx-auto max-w-screen-xl sm:px-6 md:px-12 lg:px-24 lg:py-24 2xl:px-12">
+
+ </section>
+
+ <!--END COVERTER SECTION-->
+
+ <!--STOCK API SECTION-->
+
+ <section>
+  <div class="bg-[#ffffff] px-4 py-12 mx-auto max-w-screen-xl sm:px-6 md:px-12 lg:px-24 lg:py-24 2xl:px-12">
+    <div id="stock-header">
+      <h2 class="mb-4 text-xl font-bold ml-2 rounded-xl box-decoration-clone bg-gradient-to-r from-blue-600 to-white text-white px-2 tracking-widest uppercase"> TOP 5 STOCKS </h2>
+      <span class="mb-5 ml-5 text-base font-bold px-1 text-red-700"> Live </span>
+      <span class="animate-ping mb-0.5 relative inline-flex rounded-full h-1 w-1 bg-red-600"></span>
+    </div>
+
+
+<div class="flex flex-col">
+  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+  <div class="inline-block py-2 min-w-full sm:px-6 lg:px-8">
+  <div class="overflow-hidden shadow-md sm:rounded-lg">
+  <table class="min-w-full">
+  <thead class="bg-gray-100 dark:bg-gray-700">
+  <tr>
+    
+    <!--STOCK LIST-->
+  <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-200 uppercase dark:text-gray-200">
+  NAME
+  </th>
+  <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-200 uppercase dark:text-gray-200">
+  SYMBOL
+  </th>
+  <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-200 uppercase dark:text-gray-200">
+  RANK
+  </th>
+  <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-green-500 uppercase dark:text-green-500">
+  PRICE
+  </th>
+  <th scope="col" class="relative py-3 px-6">
+  </th>
+  </tr>
+  </thead>
+  <tbody>
+  
+  <!--EACH CATERGORY HAS A UNIQUE "I.D" ATTACHED EX. (STOCK-NAMES) ETC.-->
+
+  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
+  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+  <div id="stock-name">
+  BTCBitcoin
+  </div>
+  </td>
+
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+  <div id="stock-symbol">
+  BTC
+  </div>
+  </td>
+
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+  <div id="stock-rank">
+  1ST
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+  <div id="stock-price">
+    43723.90
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+  </td>
+  </tr>
+  
+  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
+  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    <div id="stock-name">
+    ETHEthereum
+    </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+  <div id="stock-symbol">
+  ETH
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+  <div id="stock-rank">
+  2ND
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+    <div id="stock-price">
+    3359.99
+    </div>
+  </td>
+  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+  </td>
+  </tr>
+  
+  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
+  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    <div id="stock-name">
+  	BNBBNB
+    </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+  <div id="stock-symbol">
+  BNB
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+  <div id="stock-rank">
+  3RD
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+  <div id="stock-price">
+  	480.26
+    </div>
+  </td>
+  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+  </td>
+  </tr>
+  
+  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
+  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    <div id="stock-name">
+    Tether
+    </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+    <div id="stock-symbol">
+  USDT
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+    <div id="stock-rank">
+  4TH
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+    <div id="stock-price">
+    1.00
+    </div>
+  </td>
+  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+  </td>
+  </tr>
+  
+  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
+  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    <div id="stock-name">
+    Solana
+    </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+    <div id="stock-symbol">
+  SOL
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+    <div id="stock-rank">
+  5TH
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+    <div id="stock-price">
+  151.10
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>
+ <!--END STOCK API SECTION-->
+
+
+
 
     <!--FOOTER SECTION-->
-    <footer class="bg-white" aria-labelledby="footer-heading">
+    <footer class="bg-gray-50" aria-labelledby="footer-heading">
       <h2 id="footer-heading" class="sr-only">Footer</h2>
       <div class="px-5 py-12 mx-auto max-w-7xl lg:py-16 md:px-12 lg:px-20">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
@@ -229,7 +390,7 @@
           tracking-relaxed
           lg:pr-8
         "> MOTAR DEVELOPMENT GROUP </a>
-            <p class="w-1/2 mt-3 text-sm text-gray-500"> GROUP 8 INC </p>
+            <p class="w-1/2 mt-3 text-sm text-slate-700"> GROUP 8 INC </p>
           </div>
           <div class="grid grid-cols-1 gap-8 mt-12 xl:mt-0 xl:col-span-2">
             <div class="md:grid md:grid-cols-2 md:gap-8">
@@ -243,16 +404,16 @@
             "> Solutions </h3>
                 <ul role="list" class="mt-4 space-y-4">
                   <li>
-                    <a href="#" class="text-sm font-normal text-gray-500 hover:text-gray-900"> Marketing </a>
+                    <a href="#" class="text-sm font-normal text-slate-700 hover:text-blue-700"> Marketing </a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm font-normal text-gray-500 hover:text-gray-900"> Analytics </a>
+                    <a href="#" class="text-sm font-normal text-slate-700 hover:text-blue-700"> Analytics </a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm font-normal text-gray-500 hover:text-gray-900"> Commerce </a>
+                    <a href="#" class="text-sm font-normal text-slate-700 hover:text-blue-700"> Commerce </a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm font-normal text-gray-500 hover:text-gray-900"> Insights </a>
+                    <a href="#" class="text-sm font-normal text-slate-700 hover:text-blue-700"> Insights </a>
                   </li>
                 </ul>
               </div>
@@ -266,90 +427,20 @@
             "> Support </h3>
                 <ul role="list" class="mt-4 space-y-4">
                   <li>
-                    <a href="#" class="text-sm font-normal text-gray-500 hover:text-gray-900"> Pricing </a>
+                    <a href="#" class="text-sm font-normal text-slate-700 hover:text-blue-600"> Pricing </a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm font-normal text-gray-500 hover:text-gray-900"> Documentation </a>
+                    <a href="#" class="text-sm font-normal text-slate-700 hover:text-blue-600"> Documentation </a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm font-normal text-gray-500 hover:text-gray-900"> Guides </a>
+                    <a href="#" class="text-sm font-normal text-slate-700 hover:text-blue-600"> Guides </a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm font-normal text-gray-500 hover:text-gray-900"> API Status </a>
+                    <a href="#" class="text-sm font-normal text-slate-700 hover:text-blue-600"> API Status </a>
                   </li>
                 </ul>
               </div>
             </div>
-            <!-- <div class="hidden lg:justify-end md:grid md:grid-cols-1"> -->
-              <!-- <div class="w-full mt-12 md:mt-0"> -->
-                <!-- <div class="mt-8 lg:justify-end xl:mt-0"> -->
-                  <!-- <h3 class="
-                text-xs
-                font-semibold
-                tracking-wider
-                text-blue-600
-                uppercase
-              "> Subscribe to our newsletter </h3>
-                  <p class="mt-4 text-sm text-gray-500 lg:ml-auto"> The latest news, articles, and resources, sent to your inbox weekly. </p>
-                  <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
-                    <form action="" method="post" id="revue-form" name="revue-form" target="_blank" class="
-                  p-1
-                  mt-4
-                  transition
-                  duration-500
-                  ease-in-out
-                  transform
-                  border2
-                  bg-gray-50
-                  rounded-xl
-                  sm:max-w-lg sm:flex
-                "> -->
-                      <!-- <div class="flex-1 min-w-0 revue-form-group">
-                        <label for="member_email" class="sr-only">Email address</label>
-                        <input id="cta-email" type="email" class="
-                      block
-                      w-full
-                      px-5
-                      py-3
-                      text-base text-neutral-600
-                      placeholder-gray-300
-                      transition
-                      duration-500
-                      ease-in-out
-                      transform
-                      bg-transparent
-                      border border-transparent
-                      rounded-md
-                      focus:outline-none
-                      focus:border-transparent
-                      focus:ring-2
-                      focus:ring-white
-                      focus:ring-offset-2
-                      focus:ring-offset-gray-300
-                    " placeholder="Enter your email  ">
-                      </div>
-                      <div class="mt-4 sm:mt-0 sm:ml-3 revue-form-actions">
-                        <button type="submit" value="Subscribe" name="member[subscribe]" id="member_submit" class="
-                      block
-                      w-full
-                      px-5
-                      py-3
-                      text-base
-                      font-medium
-                      text-white
-                      bg-blue-600
-                      border border-transparent
-                      rounded-lg
-                      shadow
-                      hover:bg-blue-700
-                      focus:outline-none
-                      focus:ring-2
-                      focus:ring-white
-                      focus:ring-offset-2
-                      focus:ring-offset-gray-300
-                      sm:px-10
-                    "> Notify me </button>
-                      </div> -->
                     </form>
                   </div>
                 </div>
@@ -401,7 +492,7 @@
           </a>
         </div>
         <div class="mt-8 md:mt-0 md:order-1">
-          <span class="mt-2 text-md font-light text-gray-500"> Copyright © 2020 - 2021 <a href="https://wickedlabs.dev" class="mx-2 text-wickedblue hover:text-gray-500" rel="noopener noreferrer">MOTAR DEVELOPMENT GROUP</a>. Since 2021 </span>
+          <span class="mt-2 text-md font-light text-gray-800"> Copyright © 2020 - 2021 <a href="#" class="mx-2 text-wickedblue hover:text-gray-500" rel="noopener noreferrer">MOTAR DEVELOPMENT GROUP</a>.EST Since 2021 </span>
         </div>
       </div>
     </footer>
