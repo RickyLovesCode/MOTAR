@@ -23,4 +23,3 @@ SO THAT I can make smart financial decisions
 
 API:
 1-Exchange Rates https://api.coingecko.com/api/v3/exchange_rates
-2
