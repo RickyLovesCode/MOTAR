@@ -4,7 +4,7 @@
 
 this is just a temp READ.me until we code everything out.
 
-PLEASE CREATE A NEW BRANCH TO ADD WORK.
+PLEASE CREATE A NEW BRANCH TO ADD WORK...
 
 ![Project checklist screenshot](./images/checklist.png)
 
@@ -20,3 +20,7 @@ I WANT TO check the most up to date conversion rates
 SO THAT I can make smart financial decisions
 
 - Wireframe/sketch: https://wireframe.cc/lyaNqM
+
+API:
+1-Exchange Rates https://api.coingecko.com/api/v3/exchange_rates
+2
