@@ -23,4 +23,5 @@ PLEASE CREATE A NEW BRANCH TO ADD WORK...
 
 API:
 1-Exchange Rates https://api.coingecko.com/api/v3/exchange_rates
-2
+2-Stock EOD Stats http://api.marketstack.com/v1/eod
+
