@@ -13,9 +13,9 @@ function getStockEod() {
     })
 }
 
-// getStockEod();
+getStockEod();
 
-var coinGeckoApiUrl = "https://api.coingecko.com/api/v3/exchanges"
+var coinGeckoApiUrl = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=ltc"
 
 function getBitExchange() {
     fetch(coinGeckoApiUrl).then((response) => {

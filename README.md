@@ -22,5 +22,5 @@ SO THAT I can make smart financial decisions
 - Wireframe/sketch: https://wireframe.cc/lyaNqM
 
 API:
-1-Exchange Rates https://api.coingecko.com/api/v3/exchange_rates
+1-Exchange Rates  you see the screen did the JavaScript back hello are you
 2-Stock EOD Stats http://api.marketstack.com/v1/eod
