@@ -1,18 +1,16 @@
-<<<<<<< HEAD
-=======
 # MOTAR
 
 ## TEAM MOTAR! LETS GO!
 
 this is just a temp READ.me until we code everything out.
 
-PLEASE CREATE A NEW BRANCH TO ADD WORK.
+PLEASE CREATE A NEW BRANCH TO ADD WORK...
 
 ![Project checklist screenshot](./images/Checklist.PNG)
 
 - Project title: MOTAR (currency convertion)
 - Repository: https://github.com/RickyLovesCode/MOTAR
-- APIs: https://www.coingecko.com/en/api/documentation
+- APIs: https://www.coingecko.com/en/api/documentation & https://marketstack.com/documentation
 - Description: 
 WHEN I 
 THEN 
