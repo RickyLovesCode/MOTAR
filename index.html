@@ -59,6 +59,7 @@
         lg:pr-8
       "> MOTAR </a>
         </div>
+
         <nav :class="{'flex': open, 'hidden': !open}" class="flex-col items-center flex-grow hidden pb-4 border-blue-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2">
           <a class="
         px-5
@@ -189,180 +190,6 @@
  <!--COVERTER SECTION-->
 
  <!--SELECT COIN 1-->
- <div class="grid gap-4 grid-cols-2">
-  <div>
-    <div class="flex flex-wrap justify-around">
-     <div class="bg-[#ffffff]">
-   
-       <div class="mb-52 p-10">
-         <div class="max-w-md mx-auto">
-           <label for="select" class="font-semibold block py-4 text-blue-600 text-2xl"> SELECT CURRENCY </label>
-         
-             <div class="relative">
-               <div class="h-10 bg-white flex border border-gray-200 rounded items-center">
-                 <input value="BTC" name="select" id="select" class="px-4 appearance-none outline-none text-gray-800 w-full" checked />
-                 <div class=" w-full text-right pr-1 text-xs sm:text-center">
-                 select coin
-                 </div> 
-   
-                 <label for="show_more" class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-gray-600">
-                   <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                     <polyline points="18 15 12 9 6 15"></polyline>
-                   </svg>
-                 </label>
-               </div>
-         
-               <input type="checkbox" name="show_more" id="show_more" class="hidden peer" checked />
-   
-               <div class="absolute text-right rounded shadow bg-white overflow-hidden hidden peer-checked:flex flex-col w-full mt-1 border border-gray-200">
-                 <div class="cursor-pointer group">
-                   <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">BTC</a>
-                 </div>
-                 <div class="cursor-pointer group border-t">
-                   <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 border-blue-600 group-hover:bg-gray-100">ETH</a>
-                 </div>
-                 <div class="cursor-pointer group border-t">
-                   <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">SOL</a>
-                 </div>
-                 <div class="cursor-pointer group border-t">
-                   <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">DOGE</a>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-   
-   
-       <div class="mb-52 p-10">
-         <div class="max-w-md mx-auto">
-           <label for="select" class="font-semibold block py-4 text-blue-600 text-2xl"> SELECT CURRENCY </label>
-       
-           <div class="relative">
-             <div class="h-10 bg-white flex border border-gray-200 rounded items-center">
-               <input value="BTC" name="select" id="select" class="px-4 appearance-none outline-none text-gray-800 w-full" checked />
-               <div class=" w-full text-right pr-1 text-xs sm:text-center">
-               select coin
-               </div> 
-   
-               <label for="showmore" class="cursor-pointer outline-none focus:outline-none border-l   border-gray-200 transition-all text-gray-300 hover:text-gray-600">
-                 <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                   <polyline points="18 15 12 9 6 15"></polyline>
-                 </svg>
-               </label>
-             </div>
-       
-             <input type="checkbox" name="showmore" id="showmore" class="hidden peer" checked />
-   
-             <div class="absolute text-right rounded shadow bg-white overflow-hidden hidden peer-checked:flex flex-col w-full mt-1 border border-gray-200">
-               <div class="cursor-pointer group">
-                 <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">BTC</a>
-               </div>
-               <div class="cursor-pointer group border-t">
-                 <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 border-blue-600 group-hover:bg-gray-100">ETH</a>
-               </div>
-               <div class="cursor-pointer group border-t">
-                 <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">SOL</a>
-               </div>
-               <div class="cursor-pointer group border-t">
-                 <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">DOGE</a>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
-   </div>
-
-  <div><div class="flex flex-wrap justify-around">
-    <div class="bg-[#ffffff]">
-  
-      <div class="mb-52 p-10">
-        <div class="max-w-md mx-auto">
-          <label for="select" class="font-semibold block py-4 text-blue-600 text-2xl"> SELECT CURRENCY </label>
-        
-            <div class="relative">
-              <div class="h-10 bg-white flex border border-gray-200 rounded items-center">
-                <input value="BTC" name="select" id="select" class="px-4 appearance-none outline-none text-gray-800 w-full" checked />
-                <div class=" w-full text-right pr-1 text-xs sm:text-center">
-                select coin
-                </div> 
-  
-                <label for="show_more" class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-gray-600">
-                  <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="18 15 12 9 6 15"></polyline>
-                  </svg>
-                </label>
-              </div>
-        
-              <input type="checkbox" name="show_more" id="show_more" class="hidden peer" checked />
-  
-              <div class="absolute text-right rounded shadow bg-white overflow-hidden hidden peer-checked:flex flex-col w-full mt-1 border border-gray-200">
-                <div class="cursor-pointer group">
-                  <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">BTC</a>
-                </div>
-                <div class="cursor-pointer group border-t">
-                  <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 border-blue-600 group-hover:bg-gray-100">ETH</a>
-                </div>
-                <div class="cursor-pointer group border-t">
-                  <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">SOL</a>
-                </div>
-                <div class="cursor-pointer group border-t">
-                  <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">DOGE</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  
-  
-      <div class="mb-52 p-10">
-        <div class="max-w-md mx-auto">
-          <label for="select" class="font-semibold block py-4 text-blue-600 text-2xl"> SELECT CURRENCY </label>
-      
-          <div class="relative">
-            <div class="h-10 bg-white flex border border-gray-200 rounded items-center">
-              <input value="BTC" name="select" id="select" class="px-4 appearance-none outline-none text-gray-800 w-full" checked />
-              <div class=" w-full text-right pr-1 text-xs sm:text-center">
-              select coin
-              </div> 
-  
-              <label for="showmore" class="cursor-pointer outline-none focus:outline-none border-l   border-gray-200 transition-all text-gray-300 hover:text-gray-600">
-                <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="18 15 12 9 6 15"></polyline>
-                </svg>
-              </label>
-            </div>
-      
-            <input type="checkbox" name="showmore" id="showmore" class="hidden peer" checked />
-  
-            <div class="absolute text-right rounded shadow bg-white overflow-hidden hidden peer-checked:flex flex-col w-full mt-1 border border-gray-200">
-              <div class="cursor-pointer group">
-                <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">BTC</a>
-              </div>
-              <div class="cursor-pointer group border-t">
-                <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 border-blue-600 group-hover:bg-gray-100">ETH</a>
-              </div>
-              <div class="cursor-pointer group border-t">
-                <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">SOL</a>
-              </div>
-              <div class="cursor-pointer group border-t">
-                <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">DOGE</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
-  <div>03</div>
-  <div>04</div>
-</div>
-
  <div class="flex flex-wrap justify-around">
   <div class="bg-[#ffffff]">
 
@@ -376,16 +203,17 @@
               <div class=" w-full text-right pr-1 text-xs sm:text-center">
               select coin
               </div> 
-
+              
+              <!--ARROW-->
               <label for="show_more" class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-gray-600">
                 <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="18 15 12 9 6 15"></polyline>
                 </svg>
               </label>
             </div>
-      
             <input type="checkbox" name="show_more" id="show_more" class="hidden peer" checked />
 
+          <!--SELET OPTIONS 1-->
             <div class="absolute text-right rounded shadow bg-white overflow-hidden hidden peer-checked:flex flex-col w-full mt-1 border border-gray-200">
               <div class="cursor-pointer group">
                 <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">BTC</a>
@@ -417,15 +245,16 @@
             select coin
             </div> 
 
+            <!--ARRROW-->
             <label for="showmore" class="cursor-pointer outline-none focus:outline-none border-l   border-gray-200 transition-all text-gray-300 hover:text-gray-600">
               <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="18 15 12 9 6 15"></polyline>
               </svg>
             </label>
           </div>
-    
           <input type="checkbox" name="showmore" id="showmore" class="hidden peer" checked />
 
+          <!--SELET OPTIONS 2-->
           <div class="absolute text-right rounded shadow bg-white overflow-hidden hidden peer-checked:flex flex-col w-full mt-1 border border-gray-200">
             <div class="cursor-pointer group">
               <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">BTC</a>
@@ -438,7 +267,7 @@
             </div>
             <div class="cursor-pointer group border-t">
               <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">DOGE</a>
-            </div>
+            </div> 
           </div>
         </div>
       </div>
@@ -446,17 +275,27 @@
   </div>
 </div>
 
+
 <!--CONVERT BUTTON-->
 <div class="w-full flex justify-center">
   <a  href="#" @endif
-    class="flex text-gray-100 justify-center transition duration-200 ease-in-out transform px-4 py-2 w-48 border-b-4 border-blue-700 hover:border-b-2 bg-gradient-to-t from-blue-600  via-blue-500 to-blue-600 rounded-2xl hover:translate-y-px "
+    class="flex text-gray-100 justify-center transition duration-200 ease-in-out transform px-4 w-48 border-b-4 border-blue-800 hover:border-b-2 bg-gradient-to-t from-blue-600  via-blue-400 to-blue-600 rounded-2xl hover:translate-y-px py-2 my-10 "
 
-    style="-webkit-box-shadow: 0px 10px 13px -7px #101111, 5px 5px 15px 8px rgba(0,0,0,0); 
+    style="-webkit-box-shadow: 0px 10px 13px -7px #32393d, 5px 5px 15px 8px rgba(0,0,0,0); 
     box-shadow: 0px 10px 13px -7px #191b1f, 5px 5px 15px 5px rgba(0,0,0,0);">
           <span class="font-bold"> CONVERT </span>
   </a>
 </div>
 <!--END CONVERT BUTTON-->
+
+<!--VALUE BOX-->
+<div class="mb-6 flex flex-row justify-center" >
+  <label for="base-input" class="mr-5  pt-2 text-center block mb-2 text-base font-semibold text-blue-600 dark:text-blue-500">VALUE :</label>
+
+  <input type="text" id="base-input" class=" mr-16 flex bg-gray-50 border border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+</div>
+<!--END VALUE BOX-->
+
 
 
  <!--END COVERTER SECTION-->
