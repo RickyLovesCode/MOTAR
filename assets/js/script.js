@@ -1,30 +1,52 @@
-// this is the stock api variable that will use to fetch the data the symbol 
-// will have to take in a few variables. one being the stock ticker and the orther being the date from
-var stockTicker = "MSFT"
-var dateFrom = "2022-01-10"
-var stockApiUrl  = `http://api.marketstack.com/v1/eod?access_key=935893895f08ecf8ecfb02ad1b45bdc5&symbols=${stockTicker}&date_from=${dateFrom}`;
+var selectSupportedCurrencyEl = document.getElementById("supported-currency")
+var supportedCurrencyOptionEl = document.createElement("option");
+var selectCryptoIdEl = document.getElementById("crypto-id")
+var pEl = document.getElementById("conversion-rate")
+var submitButtonEl = document.querySelector("button")
+var choosenCurrency
+var choosenID
 
-function getStockEod() {
-    fetch(stockApiUrl).then((response) => {
-        console.log(response);
+function getSupportedCurrency() {
+    var supportedCurrencyUrl = "https://api.coingecko.com/api/v3/simple/supported_vs_currencies";
+    fetch(supportedCurrencyUrl).then((response) => {
+        response.json().then((data) => {
+            for (let i = 0; i < data.length; i++) {
+                selectSupportedCurrencyEl.innerHTML += "<option value=" + data[i] + ">" + data[i];
+            }
+        })
+    })
+}
+getSupportedCurrency();
+
+function getCoinList() {
+    var coinListUrl = "https://api.coingecko.com/api/v3/coins/list";
+    fetch(coinListUrl).then((response) => {
+        response.json().then((data) => {
+            for (let i = 0; i < data.length; i++) {
+                selectCryptoIdEl.innerHTML += "<option value=" + data[i].id + ">" + data[i].id;
+            }
+        })
+    })
+}
+// getCoinList();
+
+function getBitExchangeRate() {
+    setConversitonParamaters()
+    var exchangeRateUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${choosenID}&vs_currencies=${choosenCurrency}`
+    fetch(exchangeRateUrl).then((response) => {
         response.json().then((data) => {
             console.log(data)
+            pEl.innerHTML = data[choosenID][choosenCurrency]
         })
     })
 }
 
-getStockEod();
-
-var coinGeckoApiUrl = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=ltc"
-
-function getBitExchange() {
-    fetch(coinGeckoApiUrl).then((response) => {
-        console.log(response);
-        response.json().then((data) => {
-            console.log(data);
-        })
-    })
+function setConversitonParamaters() {
+    choosenCurrency = selectSupportedCurrencyEl.options[selectSupportedCurrencyEl.selectedIndex].text;
+    console.log(choosenCurrency)
+    choosenID = selectCryptoIdEl.options[selectCryptoIdEl.selectedIndex].text;
+    console.log(choosenID)
 }
 
-getBitExchange(); 
 
+submitButtonEl.addEventListener("click", getBitExchangeRate)
