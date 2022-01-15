@@ -1,3 +1,5 @@
+// JavaScript for the cryptocoin converter
+
 var selectSupportedCurrencyEl = document.getElementById("supported-currency");
 var supportedCurrencyOptionEl = document.createElement("option");
 var selectCryptoIdEl = document.getElementById("crypto-id");
@@ -6,7 +8,6 @@ var submitButtonEl = document.getElementById("#");
 var valueEl = document.getElementById("base-input");
 var choosenCurrency;
 var choosenID;
-var value
 var cryptoId = [
   "algorand",
   "ankr",
@@ -126,8 +127,8 @@ function setConversitonParamaters() {
     console.log(choosenCurrency);
     choosenID = selectCryptoIdEl.options[selectCryptoIdEl.selectedIndex].text;
     console.log(choosenID);
-    value = +(valueEl.value)
-    console.log(value)
+    // value = +(valueEl.value)
+    // console.log(value)
   }
 
 function getBitExchangeRate() {
@@ -136,16 +137,13 @@ function getBitExchangeRate() {
   fetch(exchangeRateUrl).then((response) => {
     response.json().then((data) => {
       console.log(data);
-      console.log(pEl.innerHTML);
-      if (value <= 1) {
-          pEl.innerHTML = data[choosenID][choosenCurrency];
-        } else if (value > 1) {
-          pEl.innerHTML = data[choosenID][choosenCurrency] * value;
-      }
+      valueEl.value = data[choosenID][choosenCurrency];
     });
   });
 }
 
 submitButtonEl.addEventListener("click", getBitExchangeRate);
 
+// End of crypto converter javaScript code
 
+// JavaScript for the stock end of day api
