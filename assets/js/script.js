@@ -137,3 +137,6 @@ function setConversitonParamaters() {
 }
 
 submitButtonEl.addEventListener("click", getBitExchangeRate);
+
+
+
