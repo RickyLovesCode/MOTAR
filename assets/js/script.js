@@ -2,9 +2,11 @@ var selectSupportedCurrencyEl = document.getElementById("supported-currency");
 var supportedCurrencyOptionEl = document.createElement("option");
 var selectCryptoIdEl = document.getElementById("crypto-id");
 var pEl = document.getElementById("conversion-rate");
-var submitButtonEl = document.querySelector("button");
+var submitButtonEl = document.getElementById("#");
+var valueEl = document.getElementById("base-input");
 var choosenCurrency;
 var choosenID;
+var value
 var cryptoId = [
   "algorand",
   "ankr",
@@ -81,6 +83,7 @@ var cryptoId = [
   "zilliqa",
 ];
 
+// generate option list for supported currency
 function getSupportedCurrency() {
   var supportedCurrencyUrl =
     "https://api.coingecko.com/api/v3/simple/supported_vs_currencies";
@@ -108,13 +111,24 @@ function getCoinList() {
   });
 } */
 
+// generate option list for coin id
 function getCoinList(array) {
   for (let i = 0; i < array.length; i++) {
-    selectCryptoIdEl.innerHTML +=
-      "<option value=" + array[i] + ">" + array[i];
+    selectCryptoIdEl.innerHTML += "<option value=" + array[i] + ">" + array[i];
   }
 }
 getCoinList(cryptoId);
+
+function setConversitonParamaters() {
+    choosenCurrency =
+      selectSupportedCurrencyEl.options[selectSupportedCurrencyEl.selectedIndex]
+        .text;
+    console.log(choosenCurrency);
+    choosenID = selectCryptoIdEl.options[selectCryptoIdEl.selectedIndex].text;
+    console.log(choosenID);
+    value = +(valueEl.value)
+    console.log(value)
+  }
 
 function getBitExchangeRate() {
   setConversitonParamaters();
@@ -122,21 +136,16 @@ function getBitExchangeRate() {
   fetch(exchangeRateUrl).then((response) => {
     response.json().then((data) => {
       console.log(data);
-      pEl.innerHTML = data[choosenID][choosenCurrency];
+      console.log(pEl.innerHTML);
+      if (value <= 1) {
+          pEl.innerHTML = data[choosenID][choosenCurrency];
+        } else if (value > 1) {
+          pEl.innerHTML = data[choosenID][choosenCurrency] * value;
+      }
     });
   });
 }
 
-function setConversitonParamaters() {
-  choosenCurrency =
-    selectSupportedCurrencyEl.options[selectSupportedCurrencyEl.selectedIndex]
-      .text;
-  console.log(choosenCurrency);
-  choosenID = selectCryptoIdEl.options[selectCryptoIdEl.selectedIndex].text;
-  console.log(choosenID);
-}
-
 submitButtonEl.addEventListener("click", getBitExchangeRate);
-
 
 
