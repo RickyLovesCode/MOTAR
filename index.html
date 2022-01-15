@@ -46,7 +46,7 @@
     bg-[#000000]
   ">
         <div class="flex flex-row items-center justify-between lg:justify-start">
-          <a href="#" class="
+          <a href="/index.html" class="
         text-lg
         font-bold
         tracking-tighter
@@ -152,15 +152,15 @@
 
  <section>
     <div class="bg-[#000000] px-4 py-12 mx-auto max-w-screen-xl sm:px-6 md:px-12 lg:px-24 lg:py-24 2xl:px-12">
-    <div class="flex items-center mx-auto 2xl:max-w-7xl">
+    <div class="flex flex-col items-center mx-auto 2xl:max-w-7xl md:flex-col lg:flex-row">
       <!--MAIN HEADER-->
-      <div class="flex flex-col items-start mb-16 text-left lg:flex-grow lg:w-1/2 lg:pr-24 md:mb-0">
+      <div class="flex flex-col items-start mb-16 text-left lg:flex-grow lg:w-9/12 lg:pr-24 md:mb-0">
 
-        <h1 class="mb-8 py-2 px-2 font-bold leading-none tracking-tighter text-neutral-400 sm:text-base md:text-lg lg:text-2xl box-decoration-clone bg-gradient-to-b from-black to-blue-600 rounded-3xl"> CRYPTO CURRENCY CONVERTER </h1>
+        <h1 class="mb-8 py-3 px-4 font-bold leading-none tracking-tighter text-neutral-400 text-lg md:text-2xl lg:text-3xl box-decoration-clone bg-gradient-to-b from-black to-blue-600 rounded-3xl"> CRYPTO CURRENCY CONVERTER </h1>
 
         <span class="mb-8 text-sm pl-1 font-bold tracking-widest text-blue-600 uppercase"> HOW TO USE </span>
 
-        <p class="mb-8 text-base leading-relaxed text-left text-gray-400"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus accusantium distinctio optio maiores quidem quasi impedit! Sed cumque fugit quis sunt, quidem quo quam reiciendis in quisquam facilis, repudiandae ipsam. </p>
+        <p class="flex flex-wrap mb-8 sm:text-sm md:text-lg lg:text-2xl font-semibold leading-relaxed text-left text-gray-400"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus accusantium distinctio optio maiores quidem quasi impedit! Sed cumque fugit quis sunt, quidem quo quam reiciendis in quisquam facilis, repudiandae ipsam. </p>
         <div class="mt-0 lg:mt-6 max-w-7xl sm:flex">
           <div class="mt-3 rounded-lg sm:mt-0">
         <!--END MAIN HEADER-->
@@ -174,8 +174,8 @@
         <!--END CONVERT BUTTONS-->
         </div>
     
-            <div class="relative">
-              <img class="py-5 mx-auto object-cover origin-bottom-right shadow-2xl" alt="hero" src="assets\images\option1 .jpg">
+            <div class="relative w-full h-full">
+              <img class="py-5 mx-auto  object-cover shadow-2xl" alt="hero" src="assets\images\option1 .jpg">
             
             </div>
           </div>
@@ -198,14 +198,14 @@
         <label for="select" class="font-semibold block py-4 text-blue-600 text-2xl"> SELECT CURRENCY </label>
       
           <div class="relative">
-            <div class="h-10 bg-white flex border border-gray-200 rounded items-center">
+            <div class="h-10 bg-white flex border border-gray-400 rounded items-center">
               <input value="BTC" name="select" id="select" class="px-4 appearance-none outline-none text-gray-800 w-full" checked />
               <div class=" w-full text-right pr-1 text-xs sm:text-center">
               select coin
               </div> 
               
               <!--ARROW-->
-              <label for="show_more" class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-gray-600">
+              <label for="show_more" class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-400 hover:text-gray-600">
                 <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="18 15 12 9 6 15"></polyline>
                 </svg>
@@ -214,8 +214,8 @@
             <input type="checkbox" name="show_more" id="show_more" class="hidden peer" checked />
 
           <!--SELET OPTIONS 1-->
-            <div class="absolute text-right rounded shadow bg-white overflow-hidden hidden peer-checked:flex flex-col w-full mt-1 border border-gray-200">
-              <div class="cursor-pointer group">
+            <div class="absolute text-right rounded shadow bg-white overflow-hidden hidden peer-checked:flex flex-col w-full mt-1 border border-gray-400">
+              <div class="cursor-pointer group"> 
                 <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">BTC</a>
               </div>
               <div class="cursor-pointer group border-t">
