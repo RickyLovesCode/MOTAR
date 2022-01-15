@@ -46,7 +46,7 @@
     bg-[#000000]
   ">
         <div class="flex flex-row items-center justify-between lg:justify-start">
-          <a href="#" class="
+          <a href="/index.html" class="
         text-lg
         font-bold
         tracking-tighter
@@ -59,16 +59,19 @@
         lg:pr-8
       "> MOTAR </a>
         </div>
+
         <nav :class="{'flex': open, 'hidden': !open}" class="flex-col items-center flex-grow hidden pb-4 border-blue-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2">
           <a class="
         px-5
         py-2
         mt-2
-        text-sm text-gray-300
+        text-base
+        font-semibold
+       text-gray-300
         md:mt-0
         hover:text-blue-500
         focus:outline-none focus:shadow-outline
-      " href="#">About Us</a>
+      " href="/aboutus.html" target="blank">About Us</a>
     
           <div @click.away="open = false" class="relative" x-data="{ open: false }">
             <button @click="open = !open" class="
@@ -120,7 +123,7 @@
           </div>
           <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
           
-            <button class="
+            <a href="#contact_us"><button class="
           items-center
           block
           px-5
@@ -139,7 +142,7 @@
           focus:ring-2
           focus:ring-offset-2
           focus:ring-blue-500
-        "> CONTACT US </button>
+        "> CONTACT US </button></a>
           </div>
         </nav>
       </div>
@@ -147,30 +150,35 @@
   
     <!--END NAVIGATION-->
 
- <!--MAIN CONTENT-->
+ <!--MAIN HEADER-->
 
  <section>
     <div class="bg-[#000000] px-4 py-12 mx-auto max-w-screen-xl sm:px-6 md:px-12 lg:px-24 lg:py-24 2xl:px-12">
-    <div class="flex flex-wrap items-center mx-auto 2xl:max-w-7xl">
-      <div class="flex flex-col items-start mb-16 text-left  lg:flex-grow lg:w-1/2 lg:pr-24 md:mb-0">
-        <!--MAIN HEADER-->
-        <h1 class="mb-8 py-2 px-2 text-4xl font-bold leading-none tracking-tighter text-neutral-400 sm:text-2xl md:text-3xl lg:text-5xl box-decoration-clone bg-gradient-to-b from-black to-blue-600 rounded-3xl"> CRYPTO CURRENCY CONVERTER </h1>
+    <div class="flex flex-col items-center mx-auto 2xl:max-w-7xl md:flex-col lg:flex-row">
+      <!--MAIN HEADER-->
+      <div class="flex flex-col items-start mb-16 text-left lg:flex-grow lg:w-9/12 lg:pr-24 md:mb-0">
+
+        <h1 class="mb-8 py-3 px-4 font-bold leading-none tracking-tighter text-neutral-400 text-lg md:text-2xl lg:text-3xl box-decoration-clone bg-gradient-to-b from-black to-blue-600 rounded-3xl"> CRYPTO CURRENCY CONVERTER </h1>
+
         <span class="mb-8 text-sm pl-1 font-bold tracking-widest text-blue-600 uppercase"> HOW TO USE </span>
-        <p class="mb-8 text-base leading-relaxed text-left text-gray-400"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus accusantium distinctio optio maiores quidem quasi impedit! Sed cumque fugit quis sunt, quidem quo quam reiciendis in quisquam facilis, repudiandae ipsam. </p>
+
+        <p class="flex flex-wrap mb-8 sm:text-sm md:text-lg lg:text-2xl font-semibold leading-relaxed text-left text-gray-400"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus accusantium distinctio optio maiores quidem quasi impedit! Sed cumque fugit quis sunt, quidem quo quam reiciendis in quisquam facilis, repudiandae ipsam. </p>
         <div class="mt-0 lg:mt-6 max-w-7xl sm:flex">
           <div class="mt-3 rounded-lg sm:mt-0">
         <!--END MAIN HEADER-->
 
-            <!--BUTTON CONVERT-->
-            <button class=" items-center block px-8 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600  rounded-3xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500 shadow-lg shadow-cyan-600/80 hover:shadow-blue-300/75"> CONVERT </button>
+            <!--BUTTON GET STARTED-->
+            <a href="#get_started"><button class=" items-center block px-8 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600  rounded-3xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500 shadow-lg shadow-cyan-600/80 hover:shadow-blue-300/75"> GET STARTED </button></a>
           </div>
           <div class="mt-3 rounded-lg sm:mt-0 sm:ml-3">
           </div>
         </div>
-        <!--END CONVERT BUTTONS-->
+        <!--END BUTTON GET STARTED-->
         </div>
-            <div class="relative">
-              <img class="py-5 mx-auto object-cover origin-bottom-right shadow-2xl" alt="hero" src="assets\images\option1 .jpg">
+    
+            <div class="relative w-full h-full">
+              <img class="py-5 mx-auto  object-cover shadow-2xl" alt="hero" src="assets\images\option1 .jpg">
+            
             </div>
           </div>
         </div>
@@ -179,7 +187,7 @@
   </div>
 </section>
 
- <!--END MAIN CONTENT-->
+ <!--END MAIN HEADER-->
 
  <!--COVERTER SECTION-->
 
@@ -192,23 +200,24 @@
         <label for="select" class="font-semibold block py-4 text-blue-600 text-2xl"> SELECT CURRENCY </label>
       
           <div class="relative">
-            <div class="h-10 bg-white flex border border-gray-200 rounded items-center">
+            <div class="h-10 bg-white flex border border-gray-400 rounded items-center">
               <input value="BTC" name="select" id="select" class="px-4 appearance-none outline-none text-gray-800 w-full" checked />
               <div class=" w-full text-right pr-1 text-xs sm:text-center">
               select coin
               </div> 
-
-              <label for="show_more" class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-gray-600">
+              
+              <!--ARROW-->
+              <label for="show_more" class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-400 hover:text-gray-600">
                 <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="18 15 12 9 6 15"></polyline>
                 </svg>
               </label>
             </div>
-      
             <input type="checkbox" name="show_more" id="show_more" class="hidden peer" checked />
 
-            <div class="absolute text-right rounded shadow bg-white overflow-hidden hidden peer-checked:flex flex-col w-full mt-1 border border-gray-200">
-              <div class="cursor-pointer group">
+          <!--SELET OPTIONS 1-->
+            <div class="absolute text-right rounded shadow bg-white overflow-hidden hidden peer-checked:flex flex-col w-full mt-1 border border-gray-400">
+              <div class="cursor-pointer group"> 
                 <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">BTC</a>
               </div>
               <div class="cursor-pointer group border-t">
@@ -226,10 +235,10 @@
       </div>
     </div>
 
-
+    <!--SELECT COIN 2-->
     <div class="mb-52 p-10">
       <div class="max-w-md mx-auto">
-        <label for="select" class="font-semibold block py-4 text-blue-600 text-2xl"> SELECT CURRENCY </label>
+        <a id="get_started"><label for="select" class="font-semibold block py-4 text-blue-600 text-2xl"> SELECT CURRENCY </label></a>
     
         <div class="relative">
           <div class="h-10 bg-white flex border border-gray-200 rounded items-center">
@@ -238,15 +247,16 @@
             select coin
             </div> 
 
+            <!--ARRROW-->
             <label for="showmore" class="cursor-pointer outline-none focus:outline-none border-l   border-gray-200 transition-all text-gray-300 hover:text-gray-600">
               <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="18 15 12 9 6 15"></polyline>
               </svg>
             </label>
           </div>
-    
           <input type="checkbox" name="showmore" id="showmore" class="hidden peer" checked />
 
+          <!--SELET OPTIONS 2-->
           <div class="absolute text-right rounded shadow bg-white overflow-hidden hidden peer-checked:flex flex-col w-full mt-1 border border-gray-200">
             <div class="cursor-pointer group">
               <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">BTC</a>
@@ -259,13 +269,34 @@
             </div>
             <div class="cursor-pointer group border-t">
               <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">DOGE</a>
-            </div>
+            </div> 
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+<!--CONVERT BUTTON-->
+<div class="w-full flex justify-center">
+  <a id="#"
+    class="flex text-gray-100 justify-center transition duration-200 ease-in-out transform px-4 w-48 border-b-4 border-blue-800 hover:border-b-2 bg-gradient-to-t from-blue-600  via-blue-400 to-blue-600 rounded-2xl hover:translate-y-px py-2 my-10 "
+
+    style="-webkit-box-shadow: 0px 10px 13px -7px #32393d, 5px 5px 15px 8px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 13px -7px #191b1f, 5px 5px 15px 5px rgba(0,0,0,0);">
+          <span class="font-bold"> CONVERT </span>
+  </a>
+</div>
+<!--END CONVERT BUTTON-->
+
+<!--VALUE BOX-->
+<div class="mb-6 flex flex-row justify-center" >
+  <label for="base-input" class="mr-5  pt-2 text-center block mb-2 text-base font-semibold text-blue-600 dark:text-blue-500">VALUE</label>
+
+  <input type="text" id="base-input" class=" mr-16 flex bg-gray-50 border border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+</div>
+<!--END VALUE BOX-->
 
 
 
@@ -454,7 +485,7 @@
       <div class="px-5 py-12 mx-auto max-w-7xl lg:py-16 md:px-12 lg:px-20">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
           <div class="space-y-8 xl:col-span-1">
-            <a href="/" class="
+            <a id="contact_us" class="
           text-lg
           font-bold
           tracking-tighter

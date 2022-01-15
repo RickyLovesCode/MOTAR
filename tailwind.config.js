@@ -10,3 +10,13 @@ module.exports = {
         },
     },
 }
+
+module.exports = {
+    theme: {
+        extend: {
+            dropShadow: {
+                '2xl': '0 35px 35px rgba(37, 29, 235)',
+            }
+        }
+    }
+}
