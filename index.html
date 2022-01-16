@@ -46,7 +46,7 @@
     bg-[#000000]
   ">
         <div class="flex flex-row items-center justify-between lg:justify-start">
-          <a href="/index.html" class="
+          <a class="
         text-lg
         font-bold
         tracking-tighter
@@ -57,7 +57,7 @@
         transform
         tracking-relaxed
         lg:pr-8
-      "> MOTAR </a>
+      " href="index.html"> MOTAR </a>
         </div>
 
         <nav :class="{'flex': open, 'hidden': !open}" class="flex-col items-center flex-grow hidden pb-4 border-blue-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2">
@@ -71,7 +71,7 @@
         md:mt-0
         hover:text-blue-500
         focus:outline-none focus:shadow-outline
-      " href="/aboutus.html" target="blank">About Us</a>
+      " href="aboutus.html" target="blank">About Us</a>
     
           <div @click.away="open = false" class="relative" x-data="{ open: false }">
             <button @click="open = !open" class="
