@@ -161,7 +161,7 @@ function getSupportedCurrency() {
     });
   });
 }
-getSupportedCurrency();
+// getSupportedCurrency();
 
 /* this function uses the coin gecko api that has a total of 12000 coin id. This is too much so an array with the top 100 coins was made and will be used instead. This function can be uses at a later date if needed.
 function getCoinList() {
@@ -182,9 +182,9 @@ function getCoinList(array) {
     selectCryptoIdEl.innerHTML += "<option value=" + array[i] + ">" + array[i];
   }
 }
-getCoinList(cryptoIdArr);
+// getCoinList(cryptoIdArr);
 
-function setConversitonParamaters() {
+function setConversitonParameters() {
   choosenCurrency =
     selectSupportedCurrencyEl.options[selectSupportedCurrencyEl.selectedIndex]
       .value;
@@ -194,7 +194,7 @@ function setConversitonParamaters() {
 }
 
 function getBitExchangeRate() {
-  setConversitonParamaters();
+  setConversitonParameters();
   var exchangeRateUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${choosenID}&vs_currencies=${choosenCurrency}`;
   fetch(exchangeRateUrl).then((response) => {
     response.json().then((data) => {
@@ -202,14 +202,50 @@ function getBitExchangeRate() {
       if (data[choosenID][choosenCurrency] == undefined) {
         valueEl.value = "Conversion Unavailable";
       } else {
-        valueEl.value = data[choosenID][choosenCurrency];
+        console.log(choosenCurrency);
+        valueEl.value =
+          data[choosenID][choosenCurrency] +
+          " " +
+          selectSupportedCurrencyEl.options[
+            selectSupportedCurrencyEl.selectedIndex
+          ].text;
       }
     });
   });
 }
 
-submitButtonEl.addEventListener("click", getBitExchangeRate);
+// submitButtonEl.addEventListener("click", getBitExchangeRate);
 
 // End of crypto converter javaScript code
 
 // JavaScript for the stock end of day api
+
+var stockTickerEl = document.getElementById("stock-symbol");
+var stockBtnEl = document.getElementById("stock-button");
+var ulEl = document.getElementById("symbol-list");
+var stockSymbol;
+
+function setStockParameters() {
+  while (ulEl.firstChild) {
+    ulEl.removeChild(ulEl.firstChild);
+  }
+  stockSymbol = stockTickerEl.value;
+  stockSymbol = stockSymbol.trim().toUpperCase();
+  event.preventDefault();
+}
+
+function getStockEod() {
+  setStockParameters();
+  var stockApiUrl = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stockSymbol}&apikey=2MTCI3582ZDMK6B2`;
+  fetch(stockApiUrl).then((response) => {
+    response.json().then((data) => {
+      let key;
+      for (key in data["Global Quote"]) {
+        ulEl.innerHTML += "<li>" + key + ": " + data["Global Quote"][key];
+        // console.log(data["Global Quote"][key]);
+      }
+    });
+  });
+}
+
+stockBtnEl.addEventListener("click", getStockEod);
