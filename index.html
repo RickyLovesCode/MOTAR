@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOTAR</title>
+    <link rel="stylesheet" href="assets\css\style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+
     <script>
       tailwind.config = {
         theme: {
@@ -20,15 +22,13 @@
     },
 }
     </script>
-      <!-- <style type="text/tailwindcss">
+      <!-- <!-- <style type="text/tailwindcss">
         @layer utilities {
           .content-auto {
             content-visibility: auto;
           }
         } -->
-      </style>
-    <link rel="stylesheet" href="assets\css\style.css" />
-
+      <!-- </style> --> 
 </head>
 
 <body>
@@ -46,7 +46,7 @@
     bg-[#000000]
   ">
         <div class="flex flex-row items-center justify-between lg:justify-start">
-          <a href="/index.html" class="
+          <a class="
         text-lg
         font-bold
         tracking-tighter
@@ -57,7 +57,7 @@
         transform
         tracking-relaxed
         lg:pr-8
-      "> MOTAR </a>
+      " href="index.html"> MOTAR </a>
         </div>
 
         <nav :class="{'flex': open, 'hidden': !open}" class="flex-col items-center flex-grow hidden pb-4 border-blue-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2">
@@ -70,8 +70,10 @@
        text-gray-300
         md:mt-0
         hover:text-blue-500
+        hover:underline
         focus:outline-none focus:shadow-outline
-      " href="/aboutus.html" target="blank">About Us</a>
+
+      " href="aboutus.html" target="blank">About Us</a>
     
           <div @click.away="open = false" class="relative" x-data="{ open: false }">
             <button @click="open = !open" class="
@@ -158,15 +160,15 @@
       <!--MAIN HEADER-->
       <div class="flex flex-col items-start mb-16 text-left lg:flex-grow lg:w-9/12 lg:pr-24 md:mb-0">
 
-        <h1 class="mb-8 py-3 px-4 font-bold leading-none tracking-tighter text-neutral-400 text-lg md:text-2xl lg:text-3xl box-decoration-clone bg-gradient-to-b from-black to-blue-600 rounded-3xl"> CRYPTO CURRENCY CONVERTER </h1>
+        <h1 class="mb-8 py-3 px-4 font-bold leading-none tracking-tighter text-neutral-100/70 text-lg md:text-2xl lg:text-3xl box-decoration-clone bg-gradient-to-b from-black to-blue-600 rounded-3xl"> CRYPTO CURRENCY CONVERTER </h1>
 
         <span class="mb-8 text-sm pl-1 font-bold tracking-widest text-blue-600 uppercase"> HOW TO USE </span>
 
-        <p class="flex flex-wrap mb-8 sm:text-sm md:text-lg lg:text-2xl font-semibold leading-relaxed text-left text-gray-400"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus accusantium distinctio optio maiores quidem quasi impedit! Sed cumque fugit quis sunt, quidem quo quam reiciendis in quisquam facilis, repudiandae ipsam. </p>
+        <p class="flex flex-wrap mb-8 sm:text-sm md:text-lg lg:text-2xl font-semibold leading-relaxed text-left text-gray-400 whitespace-normal"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus accusantium distinctio optio maiores quidem quasi impedit! Sed cumque fugit quis sunt, quidem quo quam reiciendis in quisquam facilis, repudiandae ipsam. </p>
         <div class="mt-0 lg:mt-6 max-w-7xl sm:flex">
           <div class="mt-3 rounded-lg sm:mt-0">
         <!--END MAIN HEADER-->
-
+        
             <!--BUTTON GET STARTED-->
             <a href="#get_started"><button class=" items-center block px-8 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600  rounded-3xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500 shadow-lg shadow-cyan-600/80 hover:shadow-blue-300/75"> GET STARTED </button></a>
           </div>
@@ -177,7 +179,7 @@
         </div>
     
             <div class="relative w-full h-full">
-              <img class="py-5 mx-auto  object-cover shadow-2xl" alt="hero" src="assets\images\option1 .jpg">
+              <img class="py-5 mx-auto bg-cover object-cover shadow-2xl" alt="hero" src="assets\images\option1 .jpg">
             
             </div>
           </div>
@@ -188,120 +190,67 @@
 </section>
 
  <!--END MAIN HEADER-->
-
+ 
  <!--COVERTER SECTION-->
+ <!--SELECT COINS SECTION-->
+  <div class="bg-[#ffffff] pt-8  pl-4 pr-4 mt-10">
 
- <!--SELECT COIN 1-->
- <div class="flex flex-wrap justify-around">
-  <div class="bg-[#ffffff]">
-
-    <div class="mb-52 p-10">
+            <!--SELECT COIN 1-->
+  <div class="flex flex-row justify-evenly border-t-8 border-x-8 border-slate-200 border-solid">
+    <div class="-mb-10 p-5">
       <div class="max-w-md mx-auto">
-        <label for="select" class="font-semibold block py-4 text-blue-600 text-2xl"> SELECT COIN ID</label>
-      
-          <div class="relative">
-            <select class="w-full text-right pr-1 text-xs sm:text-center" id="crypto-id">
-              <option value="">Choose a Crypto-ID</option>
-            </select> 
-            <!-- <div class="h-10 bg-white flex border border-gray-400 rounded items-center"> -->
-              <!-- <input value="BTC" name="select" id="select" class="px-4 appearance-none outline-none text-gray-800 w-full" checked /> -->
-              <!-- <div class=" w-full text-right pr-1 text-xs sm:text-center">
-              select coin id
-              </div>  -->
-              
-              <!--ARROW-->
-              <!-- <label for="show_more" class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-400 hover:text-gray-600">
-                <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="18 15 12 9 6 15"></polyline>
-                </svg>
-              </label> -->
-            <!-- </div> -->
-            <!-- <input type="checkbox" name="show_more" id="show_more" class="hidden peer" checked /> -->
-
-          <!--SELET OPTIONS 1-->
-            <!-- <div class="absolute text-right rounded shadow bg-white overflow-hidden hidden peer-checked:flex flex-col w-full mt-1 border border-gray-400"> -->
-              <!-- <div class="cursor-pointer group"> 
-                <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">BTC</a>
-              </div> -->
-              <!-- <div class="cursor-pointer group border-t">
-                <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 border-blue-600 group-hover:bg-gray-100">ETH</a>
-              </div> -->
-              <!-- <div class="cursor-pointer group border-t">
-                <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">SOL</a>
-              </div> -->
-              <!-- <div class="cursor-pointer group border-t">
-                <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">DOGE</a>
-              </div> -->
-            <!-- </div> -->
-          </div>
+        <a id="get_started"><label for="select" class="font-semibold block py-5 text-blue-600 text-2xl"> SELECT COIN </label></a>
+        <select class=" w-max h-max border-gray-400 border-2 rounded-lg py-5 px-16 text-sm font-normal sm:text-center hover:border-blue-700/30" name="currency" id="supported-currency">
+          <option value="" class="">Choose a Crypto Currency</option>
+        </select> 
         </div>
-      </div>
-    </div>
+        </div>
 
     <!--SELECT COIN 2-->
-    <div class="mb-52 p-10">
+    <div class="mb-10 p-5">
       <div class="max-w-md mx-auto">
-        <a id="get_started"><label for="select" class="font-semibold block py-4 text-blue-600 text-2xl"> SELECT CURRENCY </label></a>
-        <select class=" w-full text-right pr-1 text-xs sm:text-center" name="currency" id="supported-currency">
-          <option value="">Choose a Crypto Currency</option>
+        <label for="select" class="font-semibold block py-5 text-blue-600 text-2xl"> SELECT CURRENCY </label>
+        <select class=" w-max h-max border-gray-400 border-2 rounded-lg py-5 px-16 text-sm font-normal sm:text-center hover:border-blue-700/30" name="currency" id="supported-currency">
+          <option value="" class="">Choose a Crypto Currency</option>
         </select> 
-    
-        <!-- <div class="relative"> -->
-          <!-- <div class="h-10 bg-white flex border border-gray-200 rounded items-center"> -->
-            <!-- <input value="BTC" name="select" id="select" class="px-4 appearance-none outline-none text-gray-800 w-full" checked /> -->
+        </div>
+        </div>
 
-            <!--ARRROW-->
-            <!-- <label for="showmore" class="cursor-pointer outline-none focus:outline-none border-l   border-gray-200 transition-all text-gray-300 hover:text-gray-600"> -->
-              <!-- <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="18 15 12 9 6 15"></polyline>
-              </svg> -->
-            <!-- </label> -->
-          <!-- </div> -->
-          <!-- <input type="checkbox" name="showmore" id="showmore" class="hidden peer" checked /> -->
+        <!--AMOUNT BOX-->
 
-          <!--SELET OPTIONS 2-->
-          <!-- <div class="absolute text-right rounded shadow bg-white overflow-hidden hidden peer-checked:flex flex-col w-full mt-1 border border-gray-200"> -->
-            <!-- <div class="cursor-pointer group">
-              <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">BTC</a>
-            </div> -->
-            <!-- <div class="cursor-pointer group border-t">
-              <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 border-blue-600 group-hover:bg-gray-100">ETH</a>
-            </div> -->
-            <!-- <div class="cursor-pointer group border-t">
-              <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">SOL</a>
-            </div> -->
-            <!-- <div class="cursor-pointer group border-t">
-              <a class="block p-2 border-transparent border-l-4 group-hover:border-blue-600 group-hover:bg-gray-100">DOGE</a>
-            </div>  -->
-          <!-- </div> -->
-        <!-- </div> -->
-      </div>
-    </div>
-  </div>
+<div class="flex mb-6 justify-end items-center" >
+  <label for="base-input" class=" mt-8 pr-2 text-center block text-base font-semibold text-blue-600 dark:text-blue-600">AMOUNT</label>
+
+  <input type="text" id="base-input" class=" mt-8 flex bg-gray-50 border-2 border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-gray-400 dark:placeholder-gray-400 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
 </div>
+        <!--END AMOUNT BOX-->
+
+</div>
+</div>
+ <!--END SELECT COINS SECTION-->
 
 
 <!--CONVERT BUTTON-->
-<div class="w-full flex justify-center">
+<div class="pb-4 pr-4 pl-4">
+<div class="w-full flex justify-center border-x-8 border-slate-200 border-solid">
   <button id="#"
     class="flex text-gray-100 justify-center transition duration-200 ease-in-out transform px-4 w-48 border-b-4 border-blue-800 hover:border-b-2 bg-gradient-to-t from-blue-600  via-blue-400 to-blue-600 rounded-2xl hover:translate-y-px py-2 my-10 "
 
-    style="-webkit-box-shadow: 0px 10px 13px -7px #32393d, 5px 5px 15px 8px rgba(0,0,0,0); 
-    box-shadow: 0px 10px 13px -7px #191b1f, 5px 5px 15px 5px rgba(0,0,0,0);">
+    style="-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 8px rgba(38, 98, 189, 0); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(47, 82, 158, 0);">
           <span class="font-bold"> CONVERT </span>
   </button>
 </div>
 <!--END CONVERT BUTTON-->
 
 <!--VALUE BOX-->
-<div class="mb-6 flex flex-row justify-center" >
-  <label for="base-input" class="mr-5  pt-2 text-center block mb-2 text-base font-semibold text-blue-600 dark:text-blue-500">VALUE</label>
+<div class="pb-10 flex flex-row justify-center border-b-8 border-x-8 border-slate-200 border-solid" >
+  <label for="base-input" class="mr-3  pt-2 text-center block mb-2 text-base font-semibold text-blue-600 dark:text-blue-600">VALUE</label>
 
-  <input type="text" id="base-input" class=" mr-16 flex bg-gray-50 border border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  <input type="text" id="base-input" class=" mr-16 flex border-2 bg-gray-50 border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-gray-400 dark:placeholder-gray-400 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
+</div>
 </div>
 <!--END VALUE BOX-->
-
-
 
  <!--END COVERTER SECTION-->
 
@@ -607,7 +556,15 @@
       </div>
     </footer>
   
-    <!--END FOOTER SECTION-->
+    <!--END FOOTER SECTION-->  
+
+    <!-- <script>
+      $(window).on("load",function() {
+        $(".loader-wrapper").fadeOut("fast");
+
+      });
+    </script> -->
     <script src="./assets/js/script.js"></script>
+
 </body>
 </html>

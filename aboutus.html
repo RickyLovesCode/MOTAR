@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOTAR</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
-    <script>
-      tailwind.config = {
-        theme: {
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOTAR</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
         extend: {
-            screens: {
-                'xl': '1700px',
-                // => @media (min-width: 1700px) { ... }
-            },
+          screens: {
+            'xl': '1700px',
+            // => @media (min-width: 1700px) { ... }
+          },
         },
-    },
-}
-    </script>
-      <!-- <style type="text/tailwindcss">
+      },
+    }
+  </script>
+  <!-- <style type="text/tailwindcss">
         @layer utilities {
           .content-auto {
             content-visibility: auto;
           }
         } -->
-      </style>
-    <link rel="stylesheet" href="assets\css\style.css" />
+  </style>
+  <link rel="stylesheet" href="assets\css\style.css" />
 
 </head>
 
 <body>
 
-    <!--NAVIGATION-->
+  <!--NAVIGATION-->
 
-    <div class="container w-full max-w-screen-xl">
-      <div x-data="{ open: false }" class="
+  <div class="container w-full max-w-screen-xl">
+    <div x-data="{ open: false }" class="
     flex flex-col
     max-w-screen-3xl
     p-5
@@ -45,10 +46,10 @@
     lg:px-8
     bg-[#EFEFEF]
   ">
-        <div class="flex flex-row items-center justify-between lg:justify-start">
-          <a href="/index.html" class="
+      <div class="flex flex-row items-center justify-between lg:justify-start">
+        <a class="
         text-lg
-        font-bold
+        font-bold 
         tracking-tighter
         text-slate-600
         transition
@@ -58,12 +59,13 @@
         tracking-relaxed
         lg:pr-8
         hover:text-blue-500
-      "> MOTAR </a>
-        </div>
+      " href="index.html"> MOTAR </a>
+      </div>
 
-        <nav :class="{'flex': open, 'hidden': !open}" class="flex-col items-center flex-grow pb-4 border-blue-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2">
+      <nav :class="{'flex': open, 'hidden': !open}"
+        class="flex-col items-center flex-grow pb-4 border-blue-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2">
 
-          <a href="/index.html" class="
+        <a class="
         px-5
         py-2
         mt-2
@@ -71,10 +73,10 @@
         text-base text-gray-600
         md:mt-0
         hover:text-blue-500
-        focus:outline-none focus:shadow-outline">CRYPTO CONVERTER</a>
-    
-          <div @click.away="open = false" class="relative" x-data="{ open: false }">
-            <button @click="open = !open" class="
+        focus:outline-none focus:shadow-outline" href="index.html#get_started">CRYPTO CONVERTER</a>
+
+        <div @click.away="open = false" class="relative" x-data="{ open: false }">
+          <button @click="open = !open" class="
           flex flex-row
           items-center
           w-full
@@ -86,7 +88,12 @@
           hover:text-blue-600
           focus:outline-none focus:shadow-outline
         ">
-            <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="
+            <div x-show="open" x-transition:enter="transition ease-out duration-100"
+              x-transition:enter-start="transform opacity-0 scale-95"
+              x-transition:enter-end="transform opacity-100 scale-100"
+              x-transition:leave="transition ease-in duration-75"
+              x-transition:leave-start="transform opacity-100 scale-100"
+              x-transition:leave-end="transform opacity-0 scale-95" class="
           absolute
           right-0
           z-30
@@ -120,33 +127,34 @@
             " href="#">Link #2</a>
               </div>
             </div>
-          </div>
-          <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
-          
-            <a href="#contact_us"><button class="
+        </div>
+        <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
+
+          <a class="
           items-center
           block
           px-5
           py-3
           text-base
           font-medium
-          text-center text-gray-600
+          text-center 
           transition
           duration-500
           ease-in-out
           transform
           bg-[#EFEFEF]
-        "> CONTACT US </button></a>
-          </div>
-        </nav>
-      </div>
+        "></a>
+        </div>
+      </nav>
     </div>
-  
-    <!--END NAVIGATION-->
+  </div>
 
- <!--MAIN HEADER-->
- <section>
-    <div class="bg-gradient-to-r from-[#EFEFEF] via-slate-300 to-blue-400 px-4 py-12 mx-auto max-w-screen-xl sm:px-6 md:px-12 lg:px-24 lg:py-24">
+  <!--END NAVIGATION-->
+
+  <!--MAIN HEADER-->
+  <section>
+    <div
+      class="bg-gradient-to-r from-[#EFEFEF] via-slate-300 to-blue-400 px-4 py-12 mx-auto max-w-screen-xl sm:px-6 md:px-12 lg:px-24 lg:py-24">
       <div class="flex flex-col w-full mb-12 text-center items-center">
         <h1 class="
       max-w-5xl
@@ -165,7 +173,8 @@
       text-base
       leading-relaxed
       text-center text-gray-500
-    "> Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo soluta officiis labore, totam illum accusamus odit fuga libero distinctio impedit commodi, est optio id pariatur qui laudantium quia velit? Distinctio. </p>
+    "> Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo soluta officiis labore, totam illum accusamus
+          odit fuga libero distinctio impedit commodi, est optio id pariatur qui laudantium quia velit? Distinctio. </p>
         <a class="
       mx-auto
       mt-8
@@ -178,121 +187,122 @@
     </div>
   </section>
 
- <!--END MAIN HEADER-->
+  <!--END MAIN HEADER-->
 
- <!--TEAM SECTION-->
- <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
+  <!--TEAM SECTION-->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
     <div class="text-center pb-12">
-        <h2 class="text-base font-bold text-blue-600 mb-5">
-            "Alone we can do so little, together we can do so much." - Helen Keller
-        </h2>
-        <h1 class="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-900">
-            OUR TOP CONTRIBUTORS
-        </h1>
+      <h2 class="text-lg font-bold text-blue-600 mb-5">
+        "Alone we can do so little, together we can do so much." - Helen Keller
+      </h2>
+      <h1 class="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-900/80">
+        OUR TOP CONTRIBUTORS
+      </h1>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!--RICKY-->
-        <div class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)] hover:drop-shadow-[0_10px_15px_rgba(0,200,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
-            <div class="mb-8">
-                <a href="https://github.com/RickyLovesCode" target="blank"><img class="object-center object-cover rounded-full h-36 w-36" src="assets\images\ricky.jpg" alt="photo"></a>
-            </div>
-            <div class="text-center">
-                <p class="text-xl text-gray-700 font-bold mb-2">Ricky Renteria</p>
-                <p class="text-base text-gray-400 font-normal">Full Stack Dev</p>
+      <!--RICKY-->
+      <div
+        class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)] hover:drop-shadow-[0_10px_15px_rgba(0,200,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
+        <div class="mb-8">
+          <a href="https://github.com/RickyLovesCode" target="blank"><img
+              class="object-center object-cover rounded-full h-36 w-36" src="assets\images\ricky.jpg" alt="photo"></a>
+        </div>
+        <div class="text-center">
+          <p class="text-xl text-gray-700 font-bold mb-2">Ricky Renteria</p>
+          <p class="text-base text-gray-400 font-normal">Full Stack Dev</p>
 
-            <div class="flex flex-row gap-4 justify-evenly text-gray-800 py-2 my-auto mx-auto text-2xl md:mx-0">
+          <div class="flex flex-row gap-4 justify-evenly text-gray-800 py-2 my-auto mx-auto text-2xl md:mx-0">
             <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
             <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-facebook-square"></i></a>
             <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-github-square"></i></a>
           </div>
-            </div>
-            
         </div>
 
-        <!--ORLANDO-->
-        <div class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)]  hover:drop-shadow-[0_10px_15px_rgba(0,200,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
-            <div class="mb-8">
-                <a href="https://github.com/omcewan" target="blank"><img class="object-center object-cover rounded-full h-36 w-36" src="assets\images\orlando.png" alt="photo"></a>
-            </div>
-            <div class="text-center">
-                <p class="text-xl text-gray-700 font-bold mb-2">Orlando Mcewan</p>
-                <p class="text-base text-gray-400 font-normal">Full Stack Dev</p>
+      </div>
 
-                <div class="flex flex-row gap-4 justify-evenly text-gray-800 py-2 my-auto mx-auto text-2xl md:mx-0">
-                    <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
-                    <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-facebook-square"></i></a>
-                    <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-github-square"></i></a>
-                  </div>
-            </div>
+      <!--ORLANDO-->
+      <div
+        class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)]  hover:drop-shadow-[0_10px_15px_rgba(0,200,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
+        <div class="mb-8">
+          <a href="https://github.com/omcewan" target="blank"><img
+              class="object-center object-cover rounded-full h-36 w-36" src="assets\images\orlando.png" alt="photo"></a>
         </div>
+        <div class="text-center">
+          <p class="text-xl text-gray-700 font-bold mb-2">Orlando Mcewan</p>
+          <p class="text-base text-gray-400 font-normal">Full Stack Dev</p>
 
-        <!--MAYA-->
-        <div class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)]  hover:drop-shadow-[0_10px_15px_rgba(0,200,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
-            <div class="mb-8">
-                <a href="https://github.com/utimuraa" target="blank"><img class="object-center object-cover rounded-full h-36 w-36" src="assets\images\maya.png" alt="photo"></a>
-            </div>
-            <div class="text-center">
-                <p class="text-xl text-gray-700 font-bold mb-2">Maya Utimura</p>
-                <p class="text-base text-gray-400 font-normal">Full Stack Dev</p>
-
-                <div class="flex flex-row gap-4 justify-evenly text-gray-800 py-2 my-auto mx-auto text-2xl md:mx-0">
-                    <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
-                    <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-facebook-square"></i></a>
-                    <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-github-square"></i></a>
-                  </div>
-            </div>
+          <div class="flex flex-row gap-4 justify-evenly text-gray-800 py-2 my-auto mx-auto text-2xl md:mx-0">
+            <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+            <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-facebook-square"></i></a>
+            <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-github-square"></i></a>
+          </div>
         </div>
+      </div>
 
-        <!--ABE-->
-        <div class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)] hover:drop-shadow-[0_10px_15px_rgba(0,200,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
-            <div class="mb-8">
-                <a href="https://github.com/amozahem" target="blank"><img class="object-center object-cover rounded-full h-36 w-36" src="assets\images\abe.jpg" alt="photo"></a>
-            </div>
-            <div class="text-center">
-                <p class="text-xl text-gray-700 font-bold mb-2">Abe Mozahem</p>
-                <p class="text-base text-gray-400 font-normal">Full Stack Dev</p>
-
-                <div class="flex flex-row gap-4 justify-evenly text-gray-800 py-2 my-auto mx-auto text-2xl md:mx-0">
-                    <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
-                    <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-facebook-square"></i></a>
-                    <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-github-square"></i></a>
-                  </div>
-            </div>
+      <!--MAYA-->
+      <div
+        class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)]  hover:drop-shadow-[0_10px_15px_rgba(0,200,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
+        <div class="mb-8">
+          <a href="https://github.com/utimuraa" target="blank"><img
+              class="object-center object-cover rounded-full h-36 w-36" src="assets\images\maya.png" alt="photo"></a>
         </div>
+        <div class="text-center">
+          <p class="text-xl text-gray-700 font-bold mb-2">Maya Utimura</p>
+          <p class="text-base text-gray-400 font-normal">Full Stack Dev</p>
 
-        <!--TAMIKA-->
-        <div class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)]  hover:drop-shadow-[0_10px_15px_rgba(0,200,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
-            <div class="mb-8">
-                <a href="https://github.com/Necronomic0n" target="blank"><img class="object-center object-cover rounded-full h-36 w-36" src="assets\images\tamika.jpg" alt="photo"></a>
-            </div>
-            <div class="text-center">
-                <p class="text-xl text-gray-700 font-bold mb-2">Tamika Taylor</p>
-                <p class="text-base text-gray-400 font-normal">Full Stack Dev</p>
-
-                <div class="flex flex-row gap-4 justify-evenly text-gray-800 py-2 my-auto mx-auto text-2xl md:mx-0">
-                    <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
-                    <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-facebook-square"></i></a>
-                    <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-github-square"></i></a>
-                  </div>
-            </div>
+          <div class="flex flex-row gap-4 justify-evenly text-gray-800 py-2 my-auto mx-auto text-2xl md:mx-0">
+            <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+            <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-facebook-square"></i></a>
+            <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-github-square"></i></a>
+          </div>
         </div>
+      </div>
 
-        <!--EXAMPLE-->
-        <div class="w-full bg-white rounded-lg p-12 flex flex-col justify-center items-center">
-            <div class="mb-8">
-                <img class="object-center object-cover rounded-full h-36 w-36" src="#" alt="photo">
-            </div>
-            <div class="text-center">
-                <p class="text-xl text-gray-700 font-bold mb-2">N/A</p>
-                <p class="text-base text-gray-400 font-normal">Dev Ops</p>
-            </div>
+      <!--ABE-->
+      <div
+        class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)] hover:drop-shadow-[0_10px_15px_rgba(0,200,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
+        <div class="mb-8">
+          <a href="https://github.com/amozahem" target="blank"><img
+              class="object-center object-cover rounded-full h-36 w-36" src="assets\images\abe.jpg" alt="photo"></a>
         </div>
-    </div>
-</section>
- <!--TEAM SECTION-->
+        <div class="text-center">
+          <p class="text-xl text-gray-700 font-bold mb-2">Abe Mozahem</p>
+          <p class="text-base text-gray-400 font-normal">Full Stack Dev</p>
+
+          <div class="flex flex-row gap-4 justify-evenly text-gray-800 py-2 my-auto mx-auto text-2xl md:mx-0">
+            <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+            <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-facebook-square"></i></a>
+            <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-github-square"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!--TAMIKA-->
+      <div
+        class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)]  hover:drop-shadow-[0_10px_15px_rgba(0,200,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
+        <div class="mb-8">
+          <a href="https://github.com/Necronomic0n" target="blank"><img
+              class="object-center object-cover rounded-full h-36 w-36" src="assets\images\tamika.jpg" alt="photo"></a>
+        </div>
+        <div class="text-center">
+          <p class="text-xl text-gray-700 font-bold mb-2">Tamika Taylor</p>
+          <p class="text-base text-gray-400 font-normal">Full Stack Dev</p>
+
+          <div class="flex flex-row gap-4 justify-evenly text-gray-800 py-2 my-auto mx-auto text-2xl md:mx-0">
+            <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+            <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-facebook-square"></i></a>
+            <a class="hover:cursor-pointer hover:text-blue-600"><i class="fab fa-github-square"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!--EXAMPLE-->
+
+  <!--TEAM SECTION-->
 
 
- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css" />
 </body>
+
 </html>
