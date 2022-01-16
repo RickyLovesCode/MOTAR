@@ -1,30 +1,149 @@
-// // this is the stock api variable that will use to fetch the data the symbol
-// // will have to take in a few variables. one being the stock ticker and the orther being the date from
-// var stockTicker = "MSFT"
-// var dateFrom = "2022-01-10"
-// var stockApiUrl  = `http://api.marketstack.com/v1/eod?access_key=935893895f08ecf8ecfb02ad1b45bdc5&symbols=${stockTicker}&date_from=${dateFrom}`;
+// JavaScript for the cryptocoin converter
 
-// function getStockEod() {
-//     fetch(stockApiUrl).then((response) => {
-//         console.log(response);
-//         response.json().then((data) => {
-//             console.log(data)
-//         })
-//     })
-// }
+var selectSupportedCurrencyEl = document.getElementById("supported-currency");
+var supportedCurrencyOptionEl = document.createElement("option");
+var selectCryptoIdEl = document.getElementById("crypto-id");
+var pEl = document.getElementById("conversion-rate");
+var submitButtonEl = document.getElementById("#");
+var valueEl = document.getElementById("base-input");
+var choosenCurrency;
+var choosenID;
+var cryptoId = [
+  "algorand",
+  "ankr",
+  "bancor",
+  "basic-attention-token",
+  "binance-usd",
+  "bitcoin",
+  "bitcoin-gold",
+  "binancecoin",
+  "bitcoin-cash",
+  "cardano",
+  "cdai",
+  "celer-network",
+  "chainlink",
+  "chiliz",
+  "cosmos",
+  "dao",
+  "decentraland",
+  "decred",
+  "dogecoin",
+  "enjincoin",
+  "eso",
+  "etherum",
+  "etherum-classic",
+  "fantom",
+  "filecoin",
+  "flux",
+  "ftx-token",
+  "gnosis",
+  "helium",
+  "hive",
+  "huobi-token",
+  "icon",
+  "iota",
+  "iotex",
+  "kadena",
+  "kava",
+  "kucoin-shares",
+  "kusama",
+  "leo-token",
+  "livepeer",
+  "loopring",
+  "ring",
+  "monero",
+  "nem",
+  "neo",
+  "nervos-network",
+  "nexo",
+  "okb",
+  "ontology",
+  "qtum",
+  "quant",
+  "litecoin",
+  "ravencoin",
+  "siacoin",
+  "solana",
+  "stellar",
+  "swissborg",
+  "syscoin",
+  "telcoin",
+  "tether",
+  "terracoin",
+  "tezos",
+  "thorchain",
+  "tron",
+  "true-usd",
+  "uma",
+  "usd-coin",
+  "vechain",
+  "wax",
+  "waves",
+  "wazirx",
+  "zcash",
+  "zilliqa",
+];
 
-// getStockEod();
+// generate option list for supported currency
+function getSupportedCurrency() {
+  var supportedCurrencyUrl =
+    "https://api.coingecko.com/api/v3/simple/supported_vs_currencies";
+  fetch(supportedCurrencyUrl).then((response) => {
+    response.json().then((data) => {
+      for (let i = 0; i < data.length; i++) {
+        selectSupportedCurrencyEl.innerHTML +=
+          "<option value=" + data[i] + ">" + data[i];
+      }
+    });
+  });
+}
+getSupportedCurrency();
 
-// var coinGeckoApiUrl = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=ltc"
+/* this function uses the coin gecko api that has a total of 12000 coin id. This is too much so an array with the top 100 coins was made and will be used instead. This function can be uses at a later date if needed.
+function getCoinList() {
+  var coinListUrl = "https://api.coingecko.com/api/v3/coins/list";
+  fetch(coinListUrl).then((response) => {
+    response.json().then((data) => {
+      for (let i = 0; i < data.length; i++) {
+        selectCryptoIdEl.innerHTML +=
+          "<option value=" + data[i].id + ">" + data[i].id;
+      }
+    });
+  });
+} */
 
-// function getBitExchange() {
-//     fetch(coinGeckoApiUrl).then((response) => {
-//         console.log(response);
-//         response.json().then((data) => {
-//             console.log(data);
-//         })
-//     })
-// }
+// generate option list for coin id
+function getCoinList(array) {
+  for (let i = 0; i < array.length; i++) {
+    selectCryptoIdEl.innerHTML += "<option value=" + array[i] + ">" + array[i];
+  }
+}
+getCoinList(cryptoId);
 
-// getBitExchange(); 
+function setConversitonParamaters() {
+    choosenCurrency =
+      selectSupportedCurrencyEl.options[selectSupportedCurrencyEl.selectedIndex]
+        .text;
+    console.log(choosenCurrency);
+    choosenID = selectCryptoIdEl.options[selectCryptoIdEl.selectedIndex].text;
+    console.log(choosenID);
+    // value = +(valueEl.value)
+    // console.log(value)
+  }
 
+function getBitExchangeRate() {
+  setConversitonParamaters();
+  var exchangeRateUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${choosenID}&vs_currencies=${choosenCurrency}`;
+  fetch(exchangeRateUrl).then((response) => {
+    response.json().then((data) => {
+      console.log(data);
+      valueEl.value = data[choosenID][choosenCurrency];
+    });
+  });
+}
+
+submitButtonEl.addEventListener("click", getBitExchangeRate);
+
+// End of crypto converter javaScript code
+
+// JavaScript for the stock end of day api
