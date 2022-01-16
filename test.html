@@ -13,26 +13,8 @@
         <h1>Crypto Converter & Stocks</h1>
     </header>
     <main class="container">
-        <div class="row">
-            <div class="col">
-                <h3>Choose your Currency</h3>
-                <select name="choose-currency" id="crypto-id">
-                    <option value="">Choose a Crypto-ID</option>
-                </select>
-            </div>
-            <div class="col">
-                <h3>Your Conversion Rate</h3>
-                <p id="conversion-rate"></p>
-                <button type="submit" id="#">Convert</button>
-            </div>
-            <div class="col">
-                <h3>Choose your Currency</h3>
-                <select name="currency" id="supported-currency">
-                    <option value="">Choose a Crypto Currency</option>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Stock End of Day</h3>
+        <div class="card row">
+            <h3 class="col">Stock End of Day</h3>
             <form id="stock-eod">
                 <label for="stock-ticker">Stock Ticker</label>
                 <input type="text" name="stock-ticker" id="stock-symbol" autofocus="true">
@@ -40,6 +22,6 @@
             </form>
         </div>
     </main>
-    <script src="./assets/js/script.js"></script>
+    <!-- <script src="./assets/js/script.js"></script> -->
 </body>
 </html>

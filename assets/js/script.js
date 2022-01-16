@@ -8,7 +8,7 @@ var submitButtonEl = document.getElementById("#");
 var valueEl = document.getElementById("base-input");
 var choosenCurrency;
 var choosenID;
-var cryptoId = [
+var cryptoIdArr = [
   "algorand",
   "ankr",
   "bancor",
@@ -84,6 +84,70 @@ var cryptoId = [
   "zilliqa",
 ];
 
+var supportedCurrencyArr = [
+  "Bitcoin",
+  "Etherum",
+  "Litecoin",
+  "Bitcoin Cash",
+  "Binance Coin",
+  "EOS",
+  "XRP",
+  "Stellar",
+  "Chainlink",
+  "Polkadot",
+  "Yearn Finance",
+  "US Dollar",
+  "United Arab Emirates Dirham",
+  "Argentine Peso",
+  "Australian Dollar",
+  "Bandot",
+  "Bitcoin HD",
+  "Bermudian Dollar",
+  "Borealis",
+  "Candy Protocol",
+  "Crypto Franc",
+  "Scallop",
+  "Renminbi",
+  "Czech Koruny",
+  "Danish Krone",
+  "Euro",
+  "Pound",
+  "Hong Kong Dollar",
+  "Hungarian Forint",
+  "Indonesian Rupiah",
+  "Israeli New Shekel",
+  "Indian Rupee",
+  "Japanese Yen",
+  "South Korean Won",
+  "Kuwaiti Dinar",
+  "Sri Lankan Rupee",
+  "Myanmar Kyat",
+  "Mexican Peso",
+  "Malaysian Ringgit",
+  "Nigerian Naira",
+  "Norwegian Krone",
+  "New Zealand Dollar",
+  "Philippine peso",
+  "Pakistani Rupee",
+  "Poland złoty",
+  "Russian Ruble",
+  "Saudi Riyal",
+  "Swedish Krona",
+  "Singapore Dollar",
+  "Thai Baht",
+  "Turkish lira",
+  "New Taiwan dollar",
+  "Ukrainian hryvnia",
+  "Venezuelan Bolívar",
+  "Vietnamese Dong",
+  "South African Rand",
+  "XDR",
+  "Silver Ounce",
+  "Gold Ounce",
+  "Bitstar",
+  "Satoshis",
+];
+
 // generate option list for supported currency
 function getSupportedCurrency() {
   var supportedCurrencyUrl =
@@ -92,7 +156,7 @@ function getSupportedCurrency() {
     response.json().then((data) => {
       for (let i = 0; i < data.length; i++) {
         selectSupportedCurrencyEl.innerHTML +=
-          "<option value=" + data[i] + ">" + data[i];
+          "<option value=" + data[i] + ">" + supportedCurrencyArr[i];
       }
     });
   });
@@ -118,18 +182,16 @@ function getCoinList(array) {
     selectCryptoIdEl.innerHTML += "<option value=" + array[i] + ">" + array[i];
   }
 }
-getCoinList(cryptoId);
+getCoinList(cryptoIdArr);
 
 function setConversitonParamaters() {
-    choosenCurrency =
-      selectSupportedCurrencyEl.options[selectSupportedCurrencyEl.selectedIndex]
-        .text;
-    console.log(choosenCurrency);
-    choosenID = selectCryptoIdEl.options[selectCryptoIdEl.selectedIndex].text;
-    console.log(choosenID);
-    // value = +(valueEl.value)
-    // console.log(value)
-  }
+  choosenCurrency =
+    selectSupportedCurrencyEl.options[selectSupportedCurrencyEl.selectedIndex]
+      .value;
+  console.log(choosenCurrency);
+  choosenID = selectCryptoIdEl.options[selectCryptoIdEl.selectedIndex].text;
+  console.log(choosenID);
+}
 
 function getBitExchangeRate() {
   setConversitonParamaters();
@@ -137,7 +199,11 @@ function getBitExchangeRate() {
   fetch(exchangeRateUrl).then((response) => {
     response.json().then((data) => {
       console.log(data);
-      valueEl.value = data[choosenID][choosenCurrency];
+      if (data[choosenID][choosenCurrency] == undefined) {
+        valueEl.value = "Conversion Unavailable";
+      } else {
+        valueEl.value = data[choosenID][choosenCurrency];
+      }
     });
   });
 }
