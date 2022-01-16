@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOTAR</title>
+    <link rel="stylesheet" href="assets\css\style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+
     <script>
       tailwind.config = {
         theme: {
@@ -20,15 +22,13 @@
     },
 }
     </script>
-      <!-- <style type="text/tailwindcss">
+      <!-- <!-- <style type="text/tailwindcss">
         @layer utilities {
           .content-auto {
             content-visibility: auto;
           }
         } -->
-      </style>
-    <link rel="stylesheet" href="assets\css\style.css" />
-
+      <!-- </style> --> 
 </head>
 
 <body>
@@ -160,7 +160,7 @@
       <!--MAIN HEADER-->
       <div class="flex flex-col items-start mb-16 text-left lg:flex-grow lg:w-9/12 lg:pr-24 md:mb-0">
 
-        <h1 class="mb-8 py-3 px-4 font-bold leading-none tracking-tighter text-neutral-400 text-lg md:text-2xl lg:text-3xl box-decoration-clone bg-gradient-to-b from-black to-blue-600 rounded-3xl"> CRYPTO CURRENCY CONVERTER </h1>
+        <h1 class="mb-8 py-3 px-4 font-bold leading-none tracking-tighter text-neutral-100/70 text-lg md:text-2xl lg:text-3xl box-decoration-clone bg-gradient-to-b from-black to-blue-600 rounded-3xl"> CRYPTO CURRENCY CONVERTER </h1>
 
         <span class="mb-8 text-sm pl-1 font-bold tracking-widest text-blue-600 uppercase"> HOW TO USE </span>
 
@@ -179,7 +179,7 @@
         </div>
     
             <div class="relative w-full h-full">
-              <img class="py-5 mx-auto  object-cover shadow-2xl" alt="hero" src="assets\images\option1 .jpg">
+              <img class="py-5 mx-auto bg-cover object-cover shadow-2xl" alt="hero" src="assets\images\option1 .jpg">
             
             </div>
           </div>
@@ -559,7 +559,15 @@
       </div>
     </footer>
   
-    <!--END FOOTER SECTION-->
+    <!--END FOOTER SECTION-->  
+
+    <!-- <script>
+      $(window).on("load",function() {
+        $(".loader-wrapper").fadeOut("fast");
+
+      });
+    </script> -->
     <script src="./assets/js/script.js"></script>
+
 </body>
 </html>
