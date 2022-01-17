@@ -193,7 +193,7 @@ function setConversitonParameters() {
   console.log(choosenCurrency);
   choosenID = selectCryptoIdEl.options[selectCryptoIdEl.selectedIndex].text;
   console.log(choosenID);
-  value = +valueEl.value;
+  value = +amountEl.value;
   console.log(value);
 }
 
@@ -204,17 +204,17 @@ function getBitExchangeRate() {
     response.json().then((data) => {
       console.log(data);
       if (data[choosenID][choosenCurrency] == undefined) {
-        amountEl.value = "Conversion Unavailable";
+        valueEl.value = "Conversion Unavailable";
       } else {
         if (value <= 1) {
-          amountEl.value =
+          valueEl.value =
             data[choosenID][choosenCurrency] +
             " " +
             selectSupportedCurrencyEl.options[
               selectSupportedCurrencyEl.selectedIndex
             ].text;
         } else {
-          amountEl.value =
+          valueEl.value =
             data[choosenID][choosenCurrency] * value +
             " " +
             selectSupportedCurrencyEl.options[
@@ -260,4 +260,4 @@ function getStockEod() {
   });
 }
 
-// stockBtnEl.addEventListener("click", getStockEod);
+stockBtnEl.addEventListener("click", getStockEod);
