@@ -5,9 +5,11 @@ var supportedCurrencyOptionEl = document.createElement("option");
 var selectCryptoIdEl = document.getElementById("crypto-id");
 var pEl = document.getElementById("conversion-rate");
 var submitButtonEl = document.getElementById("#");
+var amountEl = document.getElementById("amount-input");
 var valueEl = document.getElementById("base-input");
 var choosenCurrency;
 var choosenID;
+var value = 0;
 var cryptoIdArr = [
   "algorand",
   "ankr",
@@ -161,7 +163,7 @@ function getSupportedCurrency() {
     });
   });
 }
-// getSupportedCurrency();
+getSupportedCurrency();
 
 /* this function uses the coin gecko api that has a total of 12000 coin id. This is too much so an array with the top 100 coins was made and will be used instead. This function can be uses at a later date if needed.
 function getCoinList() {
@@ -182,7 +184,7 @@ function getCoinList(array) {
     selectCryptoIdEl.innerHTML += "<option value=" + array[i] + ">" + array[i];
   }
 }
-// getCoinList(cryptoIdArr);
+getCoinList(cryptoIdArr);
 
 function setConversitonParameters() {
   choosenCurrency =
@@ -191,6 +193,8 @@ function setConversitonParameters() {
   console.log(choosenCurrency);
   choosenID = selectCryptoIdEl.options[selectCryptoIdEl.selectedIndex].text;
   console.log(choosenID);
+  value = +valueEl.value;
+  console.log(value);
 }
 
 function getBitExchangeRate() {
@@ -200,21 +204,29 @@ function getBitExchangeRate() {
     response.json().then((data) => {
       console.log(data);
       if (data[choosenID][choosenCurrency] == undefined) {
-        valueEl.value = "Conversion Unavailable";
+        amountEl.value = "Conversion Unavailable";
       } else {
-        console.log(choosenCurrency);
-        valueEl.value =
-          data[choosenID][choosenCurrency] +
-          " " +
-          selectSupportedCurrencyEl.options[
-            selectSupportedCurrencyEl.selectedIndex
-          ].text;
+        if (value <= 1) {
+          amountEl.value =
+            data[choosenID][choosenCurrency] +
+            " " +
+            selectSupportedCurrencyEl.options[
+              selectSupportedCurrencyEl.selectedIndex
+            ].text;
+        } else {
+          amountEl.value =
+            data[choosenID][choosenCurrency] * value +
+            " " +
+            selectSupportedCurrencyEl.options[
+              selectSupportedCurrencyEl.selectedIndex
+            ].text;
+        }
       }
     });
   });
 }
 
-// submitButtonEl.addEventListener("click", getBitExchangeRate);
+submitButtonEl.addEventListener("click", getBitExchangeRate);
 
 // End of crypto converter javaScript code
 
@@ -248,4 +260,4 @@ function getStockEod() {
   });
 }
 
-stockBtnEl.addEventListener("click", getStockEod);
+// stockBtnEl.addEventListener("click", getStockEod);
