@@ -164,7 +164,8 @@
 
         <span class="mb-8 text-sm pl-1 font-bold tracking-widest text-blue-600 uppercase"> HOW TO USE </span>
 
-        <p class="flex flex-wrap mb-8 sm:text-sm md:text-lg lg:text-2xl font-semibold leading-relaxed text-left text-gray-400 whitespace-normal"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus accusantium distinctio optio maiores quidem quasi impedit! Sed cumque fugit quis sunt, quidem quo quam reiciendis in quisquam facilis, repudiandae ipsam. </p>
+        <p class="flex flex-wrap mb-8 sm:text-sm md:text-lg lg:text-2xl font-semibold leading-relaxed text-left text-gray-400 whitespace-normal"> 
+          MOTAR is a cryptocurrency converter which can be used to convert popular cryptocurrencies, such as Bitcoin and Etherum, to different cryptocurrencies and international currencies. All you need to do is choose from a list of provided cryptocurrencies and select the currency that you will like to know the conversion rate for a MOTAR does the rest.  You can also specify an amount, for example how is 2 bitcoins in US Dollar. MOTAR can do this for you! Hit the Get Started button below to begin!</p>
         <div class="mt-0 lg:mt-6 max-w-7xl sm:flex">
           <div class="mt-3 rounded-lg sm:mt-0">
         <!--END MAIN HEADER-->
@@ -255,26 +256,37 @@
  <!--END COVERTER SECTION-->
 
  <!--STOCK API SECTION-->
- <main class="container">
-  <div class="row">
-    <div class="col-4 card">
-      <h3>Stock End of Day</h3>
-      <form id="stock-eod">
-        <label for="stock-ticker">Stock Ticker</label>
-        <input
-          type="text"
-          name="stock-ticker"
-          id="stock-symbol"
-          onfocus="this.value=''"
-        />
-        <button type="button" id="stock-button">Submit</button>
-      </form>
-    </div>
-    <div class="col-8">
-      <ul id="symbol-list"></ul>
-    </div>
+ <section style="display: flex; justify-content: space-evenly;">
+  <div style="display: flex; flex-basis: 25%; flex-direction: column;">
+    <h2>MOTAR STOCKS</h2>
+    <p>MOTAR allows you to look up stock symbols in order to see how that stock’s End Od Day statistics. Such as what it open at, closed at, and its high and low! If you are ready to up your game on cryptocurrencies and stocks, MOTAR has you covered. Just enter the stock symbol you wish to look up and hit submit! </p>
   </div>
-</main>
+  <div style = "display: flex; flex-direction: column;">
+    <h3 style="margin: 10px; align-self: center;">Stock End of Day</h3>
+    <form id="stock-eod" style="display: flex;
+    flex-direction: column; margin: 10px;">
+      <label style="align-self: center; margin: 5px;" for="stock-ticker">Stock Ticker</label>
+      <input
+        type="text"
+        name="stock-ticker"
+        id="stock-symbol"
+        onfocus="this.value=''"
+        style="margin: 5px; align-self: center;"
+      />
+      <button type="button" id="stock-button" style="align-self: center; margin: 5px;">Submit</button>
+    </form>
+  </div>
+  <div>
+    <h3>Stock 1</h3>
+    <ul id="symbol-list"></ul>
+  </div>
+  <!-- <div>
+    <h3>Stock 2</h3>
+  </div>
+  <div>
+    <h3>Stock 3</h3>
+  </div> -->
+</section>
 
  <!-- <section>
   <div class="bg-[#ffffff] px-4 py-12 mx-auto max-w-screen-xl sm:px-6 md:px-12 lg:px-24 lg:py-24 2xl:px-12">

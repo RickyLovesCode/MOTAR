@@ -235,7 +235,19 @@ submitButtonEl.addEventListener("click", getBitExchangeRate);
 var stockTickerEl = document.getElementById("stock-symbol");
 var stockBtnEl = document.getElementById("stock-button");
 var ulEl = document.getElementById("symbol-list");
-var stockSymbol;
+var stockSymbol = localStorage.getItem(stockSymbol)
+var stockData;
+var localStorageData
+
+function saveStockData(stockSymbol, stockData) {
+  localStorage.setItem(stockSymbol, JSON.stringify(stockData));
+}
+
+function retrieveStockData() {
+   localStorageData = JSON.parse(localStorage.getItem(key))
+   console.log(localStorageData)
+}
+
 
 function setStockParameters() {
   while (ulEl.firstChild) {
@@ -243,7 +255,7 @@ function setStockParameters() {
   }
   stockSymbol = stockTickerEl.value;
   stockSymbol = stockSymbol.trim().toUpperCase();
-  event.preventDefault();
+//   event.preventDefault();
 }
 
 function getStockEod() {
@@ -252,12 +264,14 @@ function getStockEod() {
   fetch(stockApiUrl).then((response) => {
     response.json().then((data) => {
       let key;
+      stockData = data["Global Quote"];
+      saveStockData(stockSymbol, stockData);
       for (key in data["Global Quote"]) {
         ulEl.innerHTML += "<li>" + key + ": " + data["Global Quote"][key];
-        // console.log(data["Global Quote"][key]);
       }
     });
   });
+  retrieveStockData()
 }
 
 stockBtnEl.addEventListener("click", getStockEod);
