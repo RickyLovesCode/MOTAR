@@ -255,26 +255,46 @@
  <!--END COVERTER SECTION-->
 
  <!--STOCK API SECTION-->
+ <main class="container">
+  <div class="row">
+    <div class="col-4 card">
+      <h3>Stock End of Day</h3>
+      <form id="stock-eod">
+        <label for="stock-ticker">Stock Ticker</label>
+        <input
+          type="text"
+          name="stock-ticker"
+          id="stock-symbol"
+          onfocus="this.value=''"
+        />
+        <button type="button" id="stock-button">Submit</button>
+      </form>
+    </div>
+    <div class="col-8">
+      <ul id="symbol-list"></ul>
+    </div>
+  </div>
+</main>
 
- <section>
+ <!-- <section>
   <div class="bg-[#ffffff] px-4 py-12 mx-auto max-w-screen-xl sm:px-6 md:px-12 lg:px-24 lg:py-24 2xl:px-12">
     <div id="stock-header">
       <h2 class="mb-4 text-xl font-bold ml-2 rounded-xl box-decoration-clone bg-gradient-to-r from-blue-600 to-white text-white px-2 tracking-widest uppercase"> TOP 5 STOCKS </h2>
       <span class="mb-5 ml-5 text-base font-bold px-1 text-red-700"> Live </span>
       <span class="animate-ping mb-0.5 relative inline-flex rounded-full h-1 w-1 bg-red-600"></span>
-    </div>
+    </div> -->
 
 
-<div class="flex flex-col">
+<!-- <div class="flex flex-col">
   <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
   <div class="inline-block py-2 min-w-full sm:px-6 lg:px-8">
   <div class="overflow-hidden shadow-md sm:rounded-lg">
   <table class="min-w-full">
   <thead class="bg-gray-100 dark:bg-gray-700">
-  <tr>
+  <tr> -->
     
     <!--STOCK LIST-->
-  <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-200 uppercase dark:text-gray-200">
+  <!-- <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-200 uppercase dark:text-gray-200">
   NAME
   </th>
   <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-200 uppercase dark:text-gray-200">
@@ -290,11 +310,11 @@
   </th>
   </tr>
   </thead>
-  <tbody>
+  <tbody> -->
   
   <!--EACH CATERGORY HAS A UNIQUE "I.D" ATTACHED EX. (STOCK-NAMES) ETC.-->
 
-  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
+  <!-- <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
   <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
   <div id="stock-name">
   BTCBitcoin
@@ -427,7 +447,7 @@
   </div>
   </div>
   </div>
-  </section>
+  </section> -->
  <!--END STOCK API SECTION-->
 
 
