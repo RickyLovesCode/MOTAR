@@ -235,27 +235,31 @@ submitButtonEl.addEventListener("click", getBitExchangeRate);
 var stockTickerEl = document.getElementById("stock-symbol");
 var stockBtnEl = document.getElementById("stock-button");
 var ulEl = document.getElementById("symbol-list");
-var stockSymbol = localStorage.getItem(stockSymbol)
+var stockSymbol
 var stockData;
-var localStorageData
+var localStorageData;
 
 function saveStockData(stockSymbol, stockData) {
   localStorage.setItem(stockSymbol, JSON.stringify(stockData));
 }
 
 function retrieveStockData() {
-   localStorageData = JSON.parse(localStorage.getItem(key))
-   console.log(localStorageData)
+  localStorageData = JSON.parse(localStorage.getItem(stockSymbol));
+  console.log(localStorageData)
+  for (let key in localStorageData) {
+    stockSymbol = key
+    console.log(key);
+    ulEl.innerHTML += "<li>" + key + ": " + localStorageData[key];
+    console.log(localStorageData[key]);
+  }
 }
-
+retrieveStockData();
 
 function setStockParameters() {
   while (ulEl.firstChild) {
     ulEl.removeChild(ulEl.firstChild);
   }
-  stockSymbol = stockTickerEl.value;
-  stockSymbol = stockSymbol.trim().toUpperCase();
-//   event.preventDefault();
+  stockSymbol = stockTickerEl.value.trim().toUpperCase()
 }
 
 function getStockEod() {
@@ -263,15 +267,13 @@ function getStockEod() {
   var stockApiUrl = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stockSymbol}&apikey=2MTCI3582ZDMK6B2`;
   fetch(stockApiUrl).then((response) => {
     response.json().then((data) => {
-      let key;
       stockData = data["Global Quote"];
       saveStockData(stockSymbol, stockData);
-      for (key in data["Global Quote"]) {
-        ulEl.innerHTML += "<li>" + key + ": " + data["Global Quote"][key];
+      for (let key in stockData) {
+        ulEl.innerHTML += "<li>" + key + ": " + stockData[key];
       }
     });
   });
-  retrieveStockData()
 }
 
 stockBtnEl.addEventListener("click", getStockEod);
