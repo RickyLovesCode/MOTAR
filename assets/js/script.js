@@ -5,10 +5,12 @@ var supportedCurrencyOptionEl = document.createElement("option");
 var selectCryptoIdEl = document.getElementById("crypto-id");
 var pEl = document.getElementById("conversion-rate");
 var submitButtonEl = document.getElementById("#");
+var amountEl = document.getElementById("amount-input");
 var valueEl = document.getElementById("base-input");
 var choosenCurrency;
 var choosenID;
-var cryptoId = [
+var value = 0;
+var cryptoIdArr = [
   "algorand",
   "ankr",
   "bancor",
@@ -84,6 +86,70 @@ var cryptoId = [
   "zilliqa",
 ];
 
+var supportedCurrencyArr = [
+  "Bitcoin",
+  "Etherum",
+  "Litecoin",
+  "Bitcoin Cash",
+  "Binance Coin",
+  "EOS",
+  "XRP",
+  "Stellar",
+  "Chainlink",
+  "Polkadot",
+  "Yearn Finance",
+  "US Dollar",
+  "United Arab Emirates Dirham",
+  "Argentine Peso",
+  "Australian Dollar",
+  "Bandot",
+  "Bitcoin HD",
+  "Bermudian Dollar",
+  "Borealis",
+  "Candy Protocol",
+  "Crypto Franc",
+  "Scallop",
+  "Renminbi",
+  "Czech Koruny",
+  "Danish Krone",
+  "Euro",
+  "Pound",
+  "Hong Kong Dollar",
+  "Hungarian Forint",
+  "Indonesian Rupiah",
+  "Israeli New Shekel",
+  "Indian Rupee",
+  "Japanese Yen",
+  "South Korean Won",
+  "Kuwaiti Dinar",
+  "Sri Lankan Rupee",
+  "Myanmar Kyat",
+  "Mexican Peso",
+  "Malaysian Ringgit",
+  "Nigerian Naira",
+  "Norwegian Krone",
+  "New Zealand Dollar",
+  "Philippine peso",
+  "Pakistani Rupee",
+  "Poland złoty",
+  "Russian Ruble",
+  "Saudi Riyal",
+  "Swedish Krona",
+  "Singapore Dollar",
+  "Thai Baht",
+  "Turkish lira",
+  "New Taiwan dollar",
+  "Ukrainian hryvnia",
+  "Venezuelan Bolívar",
+  "Vietnamese Dong",
+  "South African Rand",
+  "XDR",
+  "Silver Ounce",
+  "Gold Ounce",
+  "Bitstar",
+  "Satoshis",
+];
+
 // generate option list for supported currency
 function getSupportedCurrency() {
   var supportedCurrencyUrl =
@@ -92,7 +158,7 @@ function getSupportedCurrency() {
     response.json().then((data) => {
       for (let i = 0; i < data.length; i++) {
         selectSupportedCurrencyEl.innerHTML +=
-          "<option value=" + data[i] + ">" + data[i];
+          "<option value=" + data[i] + ">" + supportedCurrencyArr[i];
       }
     });
   });
@@ -118,26 +184,44 @@ function getCoinList(array) {
     selectCryptoIdEl.innerHTML += "<option value=" + array[i] + ">" + array[i];
   }
 }
-getCoinList(cryptoId);
+getCoinList(cryptoIdArr);
 
-function setConversitonParamaters() {
-    choosenCurrency =
-      selectSupportedCurrencyEl.options[selectSupportedCurrencyEl.selectedIndex]
-        .text;
-    console.log(choosenCurrency);
-    choosenID = selectCryptoIdEl.options[selectCryptoIdEl.selectedIndex].text;
-    console.log(choosenID);
-    // value = +(valueEl.value)
-    // console.log(value)
-  }
+function setConversitonParameters() {
+  choosenCurrency =
+    selectSupportedCurrencyEl.options[selectSupportedCurrencyEl.selectedIndex]
+      .value;
+  console.log(choosenCurrency);
+  choosenID = selectCryptoIdEl.options[selectCryptoIdEl.selectedIndex].text;
+  console.log(choosenID);
+  value = +amountEl.value;
+  console.log(value);
+}
 
 function getBitExchangeRate() {
-  setConversitonParamaters();
+  setConversitonParameters();
   var exchangeRateUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${choosenID}&vs_currencies=${choosenCurrency}`;
   fetch(exchangeRateUrl).then((response) => {
     response.json().then((data) => {
       console.log(data);
-      valueEl.value = data[choosenID][choosenCurrency];
+      if (data[choosenID][choosenCurrency] == undefined) {
+        valueEl.value = "Conversion Unavailable";
+      } else {
+        if (value <= 1) {
+          valueEl.value =
+            data[choosenID][choosenCurrency] +
+            " " +
+            selectSupportedCurrencyEl.options[
+              selectSupportedCurrencyEl.selectedIndex
+            ].text;
+        } else {
+          valueEl.value =
+            data[choosenID][choosenCurrency] * value +
+            " " +
+            selectSupportedCurrencyEl.options[
+              selectSupportedCurrencyEl.selectedIndex
+            ].text;
+        }
+      }
     });
   });
 }
@@ -147,3 +231,47 @@ submitButtonEl.addEventListener("click", getBitExchangeRate);
 // End of crypto converter javaScript code
 
 // JavaScript for the stock end of day api
+
+var stockTickerEl = document.getElementById("stock-symbol");
+var stockBtnEl = document.getElementById("stock-button");
+var ulEl = document.getElementById("symbol-list");
+var stockSymbol = localStorage.getItem(stockSymbol)
+var stockData;
+var localStorageData
+
+function saveStockData(stockSymbol, stockData) {
+  localStorage.setItem(stockSymbol, JSON.stringify(stockData));
+}
+
+function retrieveStockData() {
+   localStorageData = JSON.parse(localStorage.getItem(key))
+   console.log(localStorageData)
+}
+
+
+function setStockParameters() {
+  while (ulEl.firstChild) {
+    ulEl.removeChild(ulEl.firstChild);
+  }
+  stockSymbol = stockTickerEl.value;
+  stockSymbol = stockSymbol.trim().toUpperCase();
+//   event.preventDefault();
+}
+
+function getStockEod() {
+  setStockParameters();
+  var stockApiUrl = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stockSymbol}&apikey=2MTCI3582ZDMK6B2`;
+  fetch(stockApiUrl).then((response) => {
+    response.json().then((data) => {
+      let key;
+      stockData = data["Global Quote"];
+      saveStockData(stockSymbol, stockData);
+      for (key in data["Global Quote"]) {
+        ulEl.innerHTML += "<li>" + key + ": " + data["Global Quote"][key];
+      }
+    });
+  });
+  retrieveStockData()
+}
+
+stockBtnEl.addEventListener("click", getStockEod);
