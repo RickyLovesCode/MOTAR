@@ -274,16 +274,4 @@ function getStockEod() {
   retrieveStockData()
 }
 
-<<<<<<< HEAD
-getStockEod();
-
-var coinGeckoApiUrl = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=ltc"
-function getBitExchange() {
-        console.log(response);
-            console.log(data);
-    })
-<<<<<<< HEAD
-getBitExchange(); 
-=======
 stockBtnEl.addEventListener("click", getStockEod);
->>>>>>> 9e0454081b6b2f4cfce1fd0963dad9c3cfc1b2b1
