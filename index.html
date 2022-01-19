@@ -161,7 +161,7 @@
         </div>
         </div>
 
-        <div class=" text-xl lg:text-2xl py-3 my-3 mt-20 self-center md:mr-2 lg:mb-8">
+        <div class=" text-xl lg:text-2xl py-3 my-3 mt-20 self-center md:mr-2 lg:mr-0 lg:ml-2 lg:pl-4 lg:mb-8">
           <span class=" text-blue-600 justify-self-center" >
             <i class="fas fa-exchange-alt"></i>
           </span>
@@ -217,7 +217,7 @@
 <!--END COVERTER SECTION-->
 
  <!--STOCK API SECTION-->
- <section class="flex justify-evenly flex-col lg:flex-row py-32 px-12 w-full bg-gray-100  border-b-8 border-slate-200 border-solid">
+ <section class="flex justify-evenly flex-col lg:flex-row py-32 px-12 w-full bg-[#ffffff] border-b-8 border-slate-200 border-solid">
   <div class="flex-col flex-wrap">
     <h2 class="text-lg md:text-2xl text-blue-600 font-bold tracking-widest my-4 text-left"> MOTAR STOCKS <i class="fas fa-chart-line"></i></h2>
     <p class="text-gray-700 text-sm md:text-xl lg:text-2xl font-semibold tracking-normal leading-loose text-left capitalize" >look up any stock's <a class="underline decoration-blue-600 decoration-2 ">End Of Day (EOD) Report.</a> As well as it's open, closed, and its high and low for <a class=" underline decoration-blue-600 decoration-2 ">the current day!</a> If your ready to <span class="font-bold text-blue-800">UP</span> your game on cryptocurrencies and stocks, Just enter the stock <a class="underline decoration2 decoration-blue-600">symbol</a> and hit <a class="underline decoration2 decoration-blue-600">SEARCH!</a></p>
@@ -231,201 +231,16 @@
 
       <input type="text" id="stock-symbol" name="stock-ticker" onfocus="this.value=''" class="my-2 mx-8 w-1/2 items-center bg-gray-50 border-2 border-blue-600/80 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-blue-600/80 dark:placeholder-gray-800 dark:text-gray-800 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
 
-      <!-- <input
-        type="text"
-        name="stock-ticker"
-        id="stock-symbol"
-        onfocus="this.value=''"
-        style="margin: 5px; align-self: center;"/> -->
-
         <button id="stock-button" type="button" class=" items-center mt-2 block px-4 py-2 text-base font-medium text-center italic text-white transition duration-500 ease-in-out transform bg-blue-600  rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500 shadow-md shadow-gray-800/80 hover:shadow-blue-300/75"> Search </button>
     </form>
   </div>
 
-  <div class="w-full ">
-    <h3 class="text-2xl mt-24 w- lg:mt-4 text-blue-600 font-bold tracking-widest my-4 text-center">Results <i class="fas fa-arrow-down"></i></h3>
+  <div class="w-full">
+    <h3 id="results" class="text-2xl text-blue-600 mt-24 lg:mt-4 font-bold tracking-widest my-4 text-center">Previous Searches <i class="fas fa-arrow-down"></i></h3>
     <ul id="symbol-list"></ul>
   </div>
 
 </section>
-
- <!-- <section>
-  <div class="bg-[#ffffff] px-4 py-12 mx-auto max-w-screen-xl sm:px-6 md:px-12 lg:px-24 lg:py-24 2xl:px-12">
-    <div id="stock-header">
-      <h2 class="mb-4 text-xl font-bold ml-2 rounded-xl box-decoration-clone bg-gradient-to-r from-blue-600 to-white text-white px-2 tracking-widest uppercase"> TOP 5 STOCKS </h2>
-      <span class="mb-5 ml-5 text-base font-bold px-1 text-red-700"> Live </span>
-      <span class="animate-ping mb-0.5 relative inline-flex rounded-full h-1 w-1 bg-red-600"></span>
-    </div> -->
-
-
-<!-- <div class="flex flex-col">
-  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-  <div class="inline-block py-2 min-w-full sm:px-6 lg:px-8">
-  <div class="overflow-hidden shadow-md sm:rounded-lg">
-  <table class="min-w-full">
-  <thead class="bg-gray-100 dark:bg-gray-700">
-  <tr> -->
-    
-    <!--STOCK LIST-->
-  <!-- <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-200 uppercase dark:text-gray-200">
-  NAME
-  </th>
-  <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-200 uppercase dark:text-gray-200">
-  SYMBOL
-  </th>
-  <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-200 uppercase dark:text-gray-200">
-  RANK
-  </th>
-  <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-green-500 uppercase dark:text-green-500">
-  PRICE
-  </th>
-  <th scope="col" class="relative py-3 px-6">
-  </th>
-  </tr>
-  </thead>
-  <tbody> -->
-  
-  <!--EACH CATERGORY HAS A UNIQUE "I.D" ATTACHED EX. (STOCK-NAMES) ETC.-->
-
-  <!-- <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
-  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-  <div id="stock-name">
-  BTCBitcoin
-  </div>
-  </td>
-
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-  <div id="stock-symbol">
-  BTC
-  </div>
-  </td>
-
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-  <div id="stock-rank">
-  1ST
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-  <div id="stock-price">
-    43723.90
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-  </td>
-  </tr>
-  
-  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
-  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-    <div id="stock-name">
-    ETHEthereum
-    </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-  <div id="stock-symbol">
-  ETH
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-  <div id="stock-rank">
-  2ND
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-    <div id="stock-price">
-    3359.99
-    </div>
-  </td>
-  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-  </td>
-  </tr>
-  
-  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
-  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-    <div id="stock-name">
-  	BNBBNB
-    </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-  <div id="stock-symbol">
-  BNB
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-  <div id="stock-rank">
-  3RD
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-  <div id="stock-price">
-  	480.26
-    </div>
-  </td>
-  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-  </td>
-  </tr>
-  
-  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
-  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-    <div id="stock-name">
-    Tether
-    </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-    <div id="stock-symbol">
-  USDT
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-    <div id="stock-rank">
-  4TH
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-    <div id="stock-price">
-    1.00
-    </div>
-  </td>
-  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-  </td>
-  </tr>
-  
-  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
-  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-    <div id="stock-name">
-    Solana
-    </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-    <div id="stock-symbol">
-  SOL
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-    <div id="stock-rank">
-  5TH
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-    <div id="stock-price">
-  151.10
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-  </td>
-  </tr>
-  </tbody>
-  </table>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </section> -->
- <!--END STOCK API SECTION-->
-
- <!--END OF THE DAY-->
-
- <!--END OF THE DAY-->
 
 
     <!--FOOTER SECTION-->
