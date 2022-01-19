@@ -6,20 +6,597 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOTAR</title>
     <link rel="stylesheet" href="assets\css\style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
 
+    <script>
+      tailwind.config = {
+        theme: {
+        extend: {
+            screens: {
+                'xl': '1700px',
+                // => @media (min-width: 1700px) { ... }
+            },
+        },
+    },
+}
+    </script>
+      <!-- <!-- <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        } -->
+      <!-- </style> --> 
 </head>
+
 <body>
+
     <!--NAVIGATION-->
-    <header>
-        <h1><a href="./index.html">MO<span>TAR</span></a>
-        </h1>
-        
-        <nav>
 
-<!--NEED NAV BAR!!!-->
+    <div class="container w-full max-w-screen-xl">
+      <div x-data="{ open: false }" class="
+    flex flex-col
+    max-w-screen-3xl
+    p-5
+    mx-auto
+    md:items-center md:justify-between md:flex-row md:px-6
+    lg:px-8
+    bg-[#000000]
+  ">
+        <div class="flex flex-row items-center justify-between lg:justify-start">
+          <a class="
+        text-lg
+        font-bold
+        tracking-tighter
+        text-slate-300
+        transition
+        duration-500
+        ease-in-out
+        transform
+        tracking-relaxed
+        lg:pr-8
+      " href="index.html"> MOTAR </a>
+        </div>
 
+        <nav :class="{'flex': open, 'hidden': !open}" class="flex-col items-center flex-grow hidden pb-4 border-blue-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2">
+          <a class="
+        px-5
+        py-2
+        mt-2
+        text-base
+        font-semibold
+       text-gray-300
+        md:mt-0
+        hover:text-blue-500
+        hover:underline
+        focus:outline-none focus:shadow-outline
+
+      " href="aboutus.html" target="blank">About Us</a>
+    
+          <div @click.away="open = false" class="relative" x-data="{ open: false }">
+            <button @click="open = !open" class="
+          flex flex-row
+          items-center
+          w-full
+          px-4
+          py-2
+          mt-2
+          text-sm text-left text-gray-500
+          md:w-auto md:inline md:mt-0
+          hover:text-blue-600
+          focus:outline-none focus:shadow-outline
+        ">
+            <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="
+          absolute
+          right-0
+          z-30
+          w-full
+          mt-2
+          origin-top-right
+          rounded-md
+          shadow-lg
+          md:w-48
+        " style="display: none">
+              <div class="px-2 py-2 bg-white rounded-md shadow">
+                <a class="
+              block
+              px-4
+              py-2
+              mt-2
+              text-sm text-gray-500
+              md:mt-0
+              hover:text-blue-600
+              focus:outline-none focus:shadow-outline
+            " href="#">Link #1</a>
+                <a class="
+              block
+              px-4
+              py-2
+              mt-2
+              text-sm text-gray-500
+              md:mt-0
+              hover:text-blue-600
+              focus:outline-none focus:shadow-outline
+            " href="#">Link #2</a>
+              </div>
+            </div>
+          </div>
+          <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
+          
+            <a href="#contact_us"><button class="
+          items-center
+          block
+          px-5
+          py-3
+          text-base
+          font-medium
+          text-center text-white
+          transition
+          duration-500
+          ease-in-out
+          transform
+          bg-black
+          rounded-3xl
+          hover:bg-blue-600
+          focus:outline-none
+          focus:ring-2
+          focus:ring-offset-2
+          focus:ring-blue-500
+        "> CONTACT US </button></a>
+          </div>
         </nav>
-    </header>
+      </div>
+    </div>
+  
+    <!--END NAVIGATION-->
+
+ <!--MAIN HEADER-->
+
+ <section>
+    <div class="bg-[#000000] px-4 py-12 mx-auto max-w-screen-xl sm:px-6 md:px-12 lg:px-24 lg:py-24 2xl:px-12">
+    <div class="flex flex-col items-center mx-auto 2xl:max-w-7xl md:flex-col lg:flex-row">
+      <!--MAIN HEADER-->
+      <div class="flex flex-col items-start mb-16 text-left lg:flex-grow lg:w-9/12 lg:pr-24 md:mb-0">
+
+        <h1 class="mb-8 py-3 px-4 font-bold leading-none tracking-tighter text-neutral-100/70 text-lg md:text-2xl lg:text-3xl box-decoration-clone bg-gradient-to-b from-black to-blue-600 rounded-3xl"> CRYPTO CURRENCY CONVERTER </h1>
+
+        <span class="mb-8 text-sm pl-1 font-bold tracking-widest text-blue-600 uppercase"> HOW TO USE </span>
+
+        <p class="flex flex-wrap mb-8 sm:text-sm md:text-lg lg:text-2xl font-semibold leading-relaxed text-left text-gray-400 whitespace-normal"> 
+          MOTAR is a cryptocurrency converter which can be used to convert popular cryptocurrencies, such as Bitcoin and Etherum, to different cryptocurrencies and international currencies. All you need to do is choose from a list of provided cryptocurrencies and select the currency that you will like to know the conversion rate for a MOTAR does the rest.  You can also specify an amount, for example how is 2 bitcoins in US Dollar. MOTAR can do this for you! Hit the Get Started button below to begin!</p>
+        <div class="mt-0 lg:mt-6 max-w-7xl sm:flex">
+          <div class="mt-3 rounded-lg sm:mt-0">
+        <!--END MAIN HEADER-->
+        
+            <!--BUTTON GET STARTED-->
+            <a href="#get_started"><button class=" items-center block px-8 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600  rounded-3xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500 shadow-lg shadow-cyan-600/80 hover:shadow-blue-300/75"> GET STARTED </button></a>
+          </div>
+          <div class="mt-3 rounded-lg sm:mt-0 sm:ml-3">
+          </div>
+        </div>
+        <!--END BUTTON GET STARTED-->
+        </div>
+    
+            <div class="relative w-full h-full">
+              <img class="py-5 mx-auto bg-cover object-cover shadow-2xl" alt="hero" src="assets\images\option1 .jpg">
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!--END MAIN HEADER-->
+ 
+ <!--COVERTER SECTION-->
+ <!--SELECT COINS SECTION-->
+  <div class="bg-[#ffffff] pt-8  pl-4 pr-4 mt-10">
+
+            <!--SELECT COIN 1-->
+  <div class="flex flex-row justify-evenly border-t-8 border-x-8 border-slate-200 border-solid">
+    <div class="-mb-10 p-5">
+      <div class="max-w-md mx-auto">
+        <a id="get_started"><label for="select" class="font-semibold block py-5 text-blue-600 text-2xl"> SELECT A CRYPTO COIN </label></a>
+        <select class=" w-max h-max border-gray-400 border-2 rounded-lg py-5 px-16 text-sm font-normal sm:text-center hover:border-blue-700/30" name="currency" id="crypto-id">
+          <option value="" class="">Choose a Crypto Currency</option>
+        </select> 
+        </div>
+        </div>
+
+    <!--SELECT COIN 2-->
+    <div class="mb-10 p-5">
+      <div class="max-w-md mx-auto">
+        <label for="select" class="font-semibold block py-5 text-blue-600 text-2xl"> SELECT CURRENCY </label>
+        <select class=" w-max h-max border-gray-400 border-2 rounded-lg py-5 px-16 text-sm font-normal sm:text-center hover:border-blue-700/30" name="currency" id="supported-currency">
+          <option value="" class="">Choose a Currency</option>
+        </select> 
+        </div>
+        </div>
+
+        <!--AMOUNT BOX-->
+
+<div class="flex mb-6 justify-end items-center" >
+  <label for="base-input" class=" mt-8 pr-2 text-center block text-base font-semibold text-blue-600 dark:text-blue-600">AMOUNT</label>
+
+  <input type="text" id="amount-input" class=" mt-8 flex bg-gray-50 border-2 border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-gray-400 dark:placeholder-gray-400 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
+</div>
+        <!--END AMOUNT BOX-->
+
+</div>
+</div>
+ <!--END SELECT COINS SECTION-->
+
+
+<!--CONVERT BUTTON-->
+<div class="pb-4 pr-4 pl-4">
+<div class="w-full flex justify-center border-x-8 border-slate-200 border-solid">
+  <button id="#"
+    class="flex text-gray-100 justify-center transition duration-200 ease-in-out transform px-4 w-48 border-b-4 border-blue-800 hover:border-b-2 bg-gradient-to-t from-blue-600  via-blue-400 to-blue-600 rounded-2xl hover:translate-y-px py-2 my-10 "
+
+    style="-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 8px rgba(38, 98, 189, 0); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(47, 82, 158, 0);">
+          <span class="font-bold"> CONVERT </span>
+  </button>
+</div>
+<!--END CONVERT BUTTON-->
+
+<!--VALUE BOX-->
+<div class="pb-10 flex flex-row justify-center border-b-8 border-x-8 border-slate-200 border-solid" >
+  <label for="base-input" class="mr-3  pt-2 text-center block mb-2 text-base font-semibold text-blue-600 dark:text-blue-600">VALUE</label>
+
+  <input disabled type="text" id="base-input" class=" mr-16 flex border-2 bg-gray-50 border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-gray-400 dark:placeholder-gray-400 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
+</div>
+</div>
+<!--END VALUE BOX-->
+
+ <!--END COVERTER SECTION-->
+
+ <!--STOCK API SECTION-->
+ <section style="display: flex; justify-content: space-evenly;">
+  <div style="display: flex; flex-basis: 25%; flex-direction: column;">
+    <h2>MOTAR STOCKS</h2>
+    <p>MOTAR allows you to look up stock symbols in order to see how that stock’s End Od Day statistics. Such as what it open at, closed at, and its high and low! If you are ready to up your game on cryptocurrencies and stocks, MOTAR has you covered. Just enter the stock symbol you wish to look up and hit submit! </p>
+  </div>
+  <div style = "display: flex; flex-direction: column;">
+    <h3 style="margin: 10px; align-self: center;">Stock End of Day</h3>
+    <form id="stock-eod" style="display: flex;
+    flex-direction: column; margin: 10px;">
+      <label style="align-self: center; margin: 5px;" for="stock-ticker">Stock Ticker</label>
+      <input
+        type="text"
+        name="stock-ticker"
+        id="stock-symbol"
+        onfocus="this.value=''"
+        style="margin: 5px; align-self: center;"
+      />
+      <button type="button" id="stock-button" style="align-self: center; margin: 5px;">Submit</button>
+    </form>
+  </div>
+  <div>
+    <h3>Stock 1</h3>
+    <ul id="symbol-list"></ul>
+  </div>
+  <!-- <div>
+    <h3>Stock 2</h3>
+  </div>
+  <div>
+    <h3>Stock 3</h3>
+  </div> -->
+</section>
+
+ <!-- <section>
+  <div class="bg-[#ffffff] px-4 py-12 mx-auto max-w-screen-xl sm:px-6 md:px-12 lg:px-24 lg:py-24 2xl:px-12">
+    <div id="stock-header">
+      <h2 class="mb-4 text-xl font-bold ml-2 rounded-xl box-decoration-clone bg-gradient-to-r from-blue-600 to-white text-white px-2 tracking-widest uppercase"> TOP 5 STOCKS </h2>
+      <span class="mb-5 ml-5 text-base font-bold px-1 text-red-700"> Live </span>
+      <span class="animate-ping mb-0.5 relative inline-flex rounded-full h-1 w-1 bg-red-600"></span>
+    </div> -->
+
+
+<!-- <div class="flex flex-col">
+  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+  <div class="inline-block py-2 min-w-full sm:px-6 lg:px-8">
+  <div class="overflow-hidden shadow-md sm:rounded-lg">
+  <table class="min-w-full">
+  <thead class="bg-gray-100 dark:bg-gray-700">
+  <tr> -->
+    
+    <!--STOCK LIST-->
+  <!-- <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-200 uppercase dark:text-gray-200">
+  NAME
+  </th>
+  <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-200 uppercase dark:text-gray-200">
+  SYMBOL
+  </th>
+  <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-200 uppercase dark:text-gray-200">
+  RANK
+  </th>
+  <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-green-500 uppercase dark:text-green-500">
+  PRICE
+  </th>
+  <th scope="col" class="relative py-3 px-6">
+  </th>
+  </tr>
+  </thead>
+  <tbody> -->
+  
+  <!--EACH CATERGORY HAS A UNIQUE "I.D" ATTACHED EX. (STOCK-NAMES) ETC.-->
+
+  <!-- <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
+  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+  <div id="stock-name">
+  BTCBitcoin
+  </div>
+  </td>
+
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+  <div id="stock-symbol">
+  BTC
+  </div>
+  </td>
+
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+  <div id="stock-rank">
+  1ST
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+  <div id="stock-price">
+    43723.90
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+  </td>
+  </tr>
+  
+  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
+  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    <div id="stock-name">
+    ETHEthereum
+    </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+  <div id="stock-symbol">
+  ETH
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+  <div id="stock-rank">
+  2ND
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+    <div id="stock-price">
+    3359.99
+    </div>
+  </td>
+  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+  </td>
+  </tr>
+  
+  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
+  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    <div id="stock-name">
+  	BNBBNB
+    </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+  <div id="stock-symbol">
+  BNB
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+  <div id="stock-rank">
+  3RD
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+  <div id="stock-price">
+  	480.26
+    </div>
+  </td>
+  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+  </td>
+  </tr>
+  
+  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
+  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    <div id="stock-name">
+    Tether
+    </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+    <div id="stock-symbol">
+  USDT
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+    <div id="stock-rank">
+  4TH
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+    <div id="stock-price">
+    1.00
+    </div>
+  </td>
+  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+  </td>
+  </tr>
+  
+  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
+  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    <div id="stock-name">
+    Solana
+    </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+    <div id="stock-symbol">
+  SOL
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+    <div id="stock-rank">
+  5TH
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
+    <div id="stock-price">
+  151.10
+  </div>
+  </td>
+  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section> -->
+ <!--END STOCK API SECTION-->
+
+
+    <!--FOOTER SECTION-->
+    <footer class="bg-gray-50" aria-labelledby="footer-heading">
+      <h2 id="footer-heading" class="sr-only">Footer</h2>
+      <div class="px-5 py-12 mx-auto max-w-7xl lg:py-16 md:px-12 lg:px-20">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div class="space-y-8 xl:col-span-1">
+            <a id="contact_us" class="
+          text-lg
+          font-bold
+          tracking-tighter
+          text-blue-600
+          transition
+          duration-500
+          ease-in-out
+          transform
+          tracking-relaxed
+          lg:pr-8
+        "> MOTAR DEVELOPMENT GROUP </a>
+            <p class="w-1/2 mt-3 text-sm text-slate-700"> GROUP 8 INC </p>
+          </div>
+          <div class="grid grid-cols-1 gap-8 mt-12 xl:mt-0 xl:col-span-2">
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="
+              text-xs
+              font-semibold
+              tracking-wider
+              text-blue-600
+              uppercase
+            "> Solutions </h3>
+                <ul role="list" class="mt-4 space-y-4">
+                  <li>
+                    <a href="#" class="text-sm font-normal text-slate-700 hover:text-blue-700"> Marketing </a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-sm font-normal text-slate-700 hover:text-blue-700"> Analytics </a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-sm font-normal text-slate-700 hover:text-blue-700"> Commerce </a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-sm font-normal text-slate-700 hover:text-blue-700"> Insights </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-12 md:mt-0">
+                <h3 class="
+              text-xs
+              font-semibold
+              tracking-wider
+              text-blue-600
+              uppercase
+            "> Support </h3>
+                <ul role="list" class="mt-4 space-y-4">
+                  <li>
+                    <a href="#" class="text-sm font-normal text-slate-700 hover:text-blue-600"> Pricing </a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-sm font-normal text-slate-700 hover:text-blue-600"> Documentation </a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-sm font-normal text-slate-700 hover:text-blue-600"> Guides </a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-sm font-normal text-slate-700 hover:text-blue-600"> API Status </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="
+    px-5
+    py-12
+    mx-auto
+    bg-gray-50
+    max-w-7xl
+    sm:px-6
+    md:flex md:items-center md:justify-between
+    lg:px-20
+  ">
+        <div class="flex justify-center mb-8 space-x-6 md:order-last md:mb-0">
+          <a href="#" class="text-blue-600 hover:text-gray-500">
+            <span class="sr-only">Facebook</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a href="#" class="text-blue-600 hover:text-gray-500">
+            <span class="sr-only">Instagram</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a href="#" class="text-blue-600 hover:text-gray-500">
+            <span class="sr-only">Twitter</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+            </svg>
+          </a>
+          <a href="#" class="text-blue-600 hover:text-gray-500">
+            <span class="sr-only">GitHub</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a href="#" class="text-blue-600 hover:text-gray-500">
+            <span class="sr-only">LINKED IN</span>
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="mt-8 md:mt-0 md:order-1">
+          <span class="mt-2 text-md font-light text-gray-800"> Copyright © 2020 - 2021 <a href="#" class="mx-2 text-wickedblue hover:text-gray-500" rel="noopener noreferrer">MOTAR DEVELOPMENT GROUP</a>.EST Since 2021 </span>
+        </div>
+      </div>
+    </footer>
+  
+    <!--END FOOTER SECTION-->  
+
+    <!-- <script>
+      $(window).on("load",function() {
+        $(".loader-wrapper").fadeOut("fast");
+
+      });
+    </script> -->
+    <script src="./assets/js/script.js"></script>
 
 </body>
 </html>
