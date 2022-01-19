@@ -1,34 +1,30 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MOTAR</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
-  <script>
-    tailwind.config = {
-      theme: {
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOTAR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script src="https://kit.fontawesome.com/698395fe77.js" crossorigin="anonymous"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
         extend: {
-          screens: {
-            'xl': '1700px',
-            // => @media (min-width: 1700px) { ... }
-          },
+            screens: {
+                'xl': '1700px',
+                '2xl': '1850px',
+                '3xl': '1980px',
+                '4xl': '2000px',
+                // => @media (min-width: 1700px) { ... }
+            },
         },
-      },
-    }
-  </script>
-  <!-- <style type="text/tailwindcss">
-        @layer utilities {
-          .content-auto {
-            content-visibility: auto;
-          }
-        } -->
-  </style>
-  <link rel="stylesheet" href="assets\css\style.css" />
+    },
+}
+    </script>
 
 </head>
 
@@ -36,10 +32,10 @@
 
   <!--NAVIGATION-->
 
-  <div class="container w-full max-w-screen-xl">
+  <div class="container w-full max-w-screen-5xl">
     <div x-data="{ open: false }" class="
     flex flex-col
-    max-w-screen-3xl
+    max-w-screen-5xl
     p-5
     mx-auto
     md:items-center md:justify-between md:flex-row md:px-6
@@ -154,7 +150,7 @@
   <!--MAIN HEADER-->
   <section>
     <div
-      class="bg-gradient-to-r from-[#EFEFEF] via-slate-300 to-blue-400 px-4 py-12 mx-auto max-w-screen-xl sm:px-6 md:px-12 lg:px-24 lg:py-24">
+      class="bg-gradient-to-r from-[#EFEFEF] via-slate-300 to-blue-400 px-4 py-12 mx-auto max-w-screen-5xl sm:px-6 md:px-12 lg:px-24 lg:py-24">
       <div class="flex flex-col w-full mb-12 text-center items-center">
         <h1 class="
       max-w-5xl
@@ -190,7 +186,7 @@
   <!--END MAIN HEADER-->
 
   <!--TEAM SECTION-->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
+  <section class="mx-auto px-4 sm:px-6 lg:px-4 py-12 max-w-screen-5xl">
     <div class="text-center pb-12">
       <h2 class="text-lg font-bold text-blue-600 mb-5" id="team">
         "Alone we can do so little, together we can do so much." - Helen Keller
@@ -203,7 +199,7 @@
 
       <!--RICKY-->
       <div
-        class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)] hover:drop-shadow-[0_10px_15px_rgba(0,200,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
+        class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)] hover:drop-shadow-[0_10px_15px_rgba(0,150,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
         <div class="mb-8">
           <a href="https://github.com/RickyLovesCode" target="blank"><img
               class="object-center object-cover rounded-full h-36 w-36" src="assets\images\ricky.jpg" alt="photo"></a>
@@ -223,7 +219,7 @@
 
       <!--ORLANDO-->
       <div
-        class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)]  hover:drop-shadow-[0_10px_15px_rgba(0,200,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
+        class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)]  hover:drop-shadow-[0_10px_15px_rgba(0,150,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
         <div class="mb-8">
           <a href="https://github.com/omcewan" target="blank"><img
               class="object-center object-cover rounded-full h-36 w-36" src="assets\images\orlando.png" alt="photo"></a>
@@ -242,7 +238,7 @@
 
       <!--MAYA-->
       <div
-        class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)]  hover:drop-shadow-[0_10px_15px_rgba(0,200,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
+        class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)]  hover:drop-shadow-[0_10px_15px_rgba(0,150,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
         <div class="mb-8">
           <a href="https://github.com/utimuraa" target="blank"><img
               class="object-center object-cover rounded-full h-36 w-36" src="assets\images\maya.png" alt="photo"></a>
@@ -261,7 +257,7 @@
 
       <!--ABE-->
       <div
-        class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)] hover:drop-shadow-[0_10px_15px_rgba(0,200,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
+        class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)] hover:drop-shadow-[0_10px_15px_rgba(0,150,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
         <div class="mb-8">
           <a href="https://github.com/amozahem" target="blank"><img
               class="object-center object-cover rounded-full h-36 w-36" src="assets\images\abe.jpg" alt="photo"></a>
@@ -280,7 +276,7 @@
 
       <!--TAMIKA-->
       <div
-        class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)]  hover:drop-shadow-[0_10px_15px_rgba(0,200,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
+        class="w-full bg-white drop-shadow-[0_10px_15px_rgba(0,80,255,0.98)]  hover:drop-shadow-[0_10px_15px_rgba(0,150,255,0.98)] rounded-lg p-12 flex flex-col justify-center items-center">
         <div class="mb-8">
           <a href="https://github.com/Necronomic0n" target="blank"><img
               class="object-center object-cover rounded-full h-36 w-36" src="assets\images\tamika.jpg" alt="photo"></a>
@@ -301,7 +297,7 @@
 
   <!--PROGRESS SECTION-->
 
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4">
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-4">
     <div class="text-center mt-32 pt-12">
       <h1 class="font-bold text-xl md:text-4xl lg:text-5xl font-heading text-gray-900/80">
         OUR WEBSITE WAS PROGRAMMED WITH 
@@ -376,7 +372,7 @@
   <!--PROGRESS SECTION-->
   
       <!--FOOTER SECTION-->
-      <footer class="bg-white" aria-labelledby="footer-heading">
+      <footer class="bg-white w-full" aria-labelledby="footer-heading">
         <h2 id="footer-heading" class="sr-only">Footer</h2>
         <div class="px-5 py-12 mx-auto max-w-7xl lg:py-16 md:px-12 lg:px-20">
           <div class="xl:grid xl:grid-cols-3 xl:gap-8">
