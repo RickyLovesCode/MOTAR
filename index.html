@@ -15,10 +15,11 @@
         theme: {
         extend: {
             screens: {
-                'xl': '1700px',
+                'xl': '1400px',
                 '2xl': '1850px',
                 '3xl': '1980px',
                 '4xl': '2000px',
+                '5xl': '3850px',
                 // => @media (min-width: 1700px) { ... }
             },
         },
@@ -32,10 +33,10 @@
 
     <!--NAVIGATION-->
 
-    <div class="container w-full max-w-screen-4xl">
+    <div class="container w-full max-w-screen-5xl">
       <div x-data="{ open: false }" class="
     flex flex-col
-    max-w-screen-3xl
+    max-w-screen-5xl
     p-5
     mx-auto
     md:items-center md:justify-between md:flex-row md:px-6
@@ -58,8 +59,9 @@
       " href="index.html"><i class="fas fa-braille"></i> &nbsp; MOTAR </a>
         </div>
 
-        <nav :class="{'flex': open, 'hidden': !open}" class="flex-col items-center flex-grow hidden pb-4 border-blue-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2">
+        <nav class="flex-col items-center flex-grow hidden pb-4 border-blue-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2">
           <a class="
+          sm:justify-end
         px-5
         py-2
         mt-2
@@ -73,55 +75,7 @@
 
       " href="aboutus.html" target="blank">About Us</a>
     
-          <div @click.away="open = false" class="relative" x-data="{ open: false }">
-            <button @click="open = !open" class="
-          flex flex-row
-          items-center
-          w-full
-          px-4
-          py-2
-          mt-2
-          text-sm text-left text-gray-500
-          md:w-auto md:inline md:mt-0
-          hover:text-blue-600
-          focus:outline-none focus:shadow-outline
-        ">
-            <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="
-          absolute
-          right-0
-          z-30
-          w-full
-          mt-2
-          origin-top-right
-          rounded-md
-          shadow-lg
-          md:w-48
-        " style="display: none">
-              <div class="px-2 py-2 bg-white rounded-md shadow">
-                <a class="
-              block
-              px-4
-              py-2
-              mt-2
-              text-sm text-gray-500
-              md:mt-0
-              hover:text-blue-600
-              focus:outline-none focus:shadow-outline
-            " href="#">Link #1</a>
-                <a class="
-              block
-              px-4
-              py-2
-              mt-2
-              text-sm text-gray-500
-              md:mt-0
-              hover:text-blue-600
-              focus:outline-none focus:shadow-outline
-            " href="#">Link #2</a>
-              </div>
-            </div>
-          </div>
-          <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
+          <div class="items-center gap-2 list-none lg:ml-auto">
           
             <a href="#contact_us"><button class="
           items-center
@@ -153,23 +107,24 @@
  <!--MAIN HEADER-->
 
  <section>
-    <div class="bg-[#000000] px-4 py-12 mx-auto max-w-screen-4xl  sm:px-6 md:px-12 lg:px-24 lg:py-24 2xl: 2xl:px-12">
-    <div class="flex flex-col items-center mx-auto 2xl:max-w-7xl md:flex-col lg:flex-row">
+    <div class="bg-[#000000] px-4 py-12 mx-auto max-w-screen-5xl  sm:px-6 md:px-12 lg:px-8 lg:py-10 2xl: 2xl:px-12">
+    <div class="flex flex-col items-center mx-auto 2xl:max-w-7xl lg:flex-row">
       <!--MAIN HEADER-->
-      <div class="flex flex-col items-start mb-16 text-left lg:flex-grow lg:w-9/12 lg:pr-24 md:mb-0">
+      <div class="flex flex-col items-start mb-16 text-left lg:flex-grow lg:w-9/12 md:mb-0">
 
-        <h1 class="mb-8 py-5 px-6 font-bold leading-none tracking-tighter text-neutral-100/70 md:flex md:flex-wrap md:text-2xl box-decoration-clone bg-gradient-to-b from-black to-blue-600 rounded-3xl"> CRYPTO CURRENCY CONVERTER </h1>
+        <h1 class="mb-8 py-3 px-6 font-medium md:font-bold text-lg md:text-xl lg:text-3xl leading-none tracking-tighter text-neutral-100/70 md:flex md:flex-wrap box-decoration-clone bg-gradient-to-b from-black to-blue-600/80 rounded-b-lg"> CRYPTO CURRENCY CONVERTER </h1>
 
-        <span class="mb-8 py-2 text-lg pl-1 font-bold tracking-widest text-blue-600 uppercase"> HOW TO USE </span>
+        <span class="mb-4 py-2 text-base md:text-lg lg:text-xl pl-1 font-semibold md:font-bold tracking-widest text-blue-600 uppercase"> HOW TO USE </span>
 
-        <p class="flex flex-wrap mb-8 md:text-xl lg:text-2xl font-semibold text-left text-gray-400 whitespace-normal antialiased tracking-wide capitalize"> 
-          This cryptocurrency converter can be used to convert cryptocurrencies, such as Bitcoin and Etherum, to different cryptocurrencies and <span class="italic">international currencies.</span><br>All you need to do is choose from a list of cryptocurrencies and select the currency that you wish to convert. You can also specify an amount, for example how much is 2 bitcoins in US Dollars. Hit the Get Started button below to begin!</p>
+        <p class="flex flex-wrap mb-8 text-base md:text-lg lg:text-2xl font-semibold md:font-bold text-left justify-start text-neutral-100/70 whitespace-normal antialiased capitalize"> 
+          Ready to up your Cryptocurrency and Stock exchange game? First, you need the basics.
+          MOTAR is here to help! Click the Get Started button below to begin!</p>
         <div class="mt-0 lg:mt-6 max-w-7xl sm:flex">
           <div class="mt-3 rounded-lg sm:mt-0">
         <!--END MAIN HEADER-->
         
             <!--BUTTON GET STARTED-->
-            <a href="#get_started"><button class=" items-center block px-8 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600  rounded-3xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500 shadow-lg shadow-cyan-600/80 hover:shadow-blue-300/75"> GET STARTED </button></a>
+            <a href="#get_started"><button class=" items-center block px-4 py-2 lg:px-8 lg:py-4 text-sm md:text-lg lg:text-xl font-medium lg:font-bold text-center text-white transition duration-500 ease-in-out transform bg-blue-600  rounded-3xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500 shadow-lg shadow-cyan-600/80 hover:shadow-blue-300/75"> GET STARTED </button></a>
           </div>
           <div class="mt-3 rounded-lg sm:mt-0 sm:ml-3">
           </div>
@@ -195,18 +150,19 @@
   <div class="bg-[#ffffff] pt-8  pl-4 pr-4 mt-10">
 
             <!--SELECT COIN 1-->
-  <div class="flex flex-row flex-wrap justify-evenly border-t-8 border-x-8 border-slate-200 border-solid">
+  <div class="flex flex-col flex-wrap lg:flex-row justify-evenly border-t-8 border-slate-200 border-solid ">
     <div class="-mb-10 p-5">
       <div class="max-w-md mx-auto items-center">
-        <a id="get_started"><label for="select" class="font-semibold block py-5 text-blue-600 text-2xl"> SELECT CRYPTO COIN </label></a>
-        <select class=" w-max h-max text-gray-700 hover:text-blue-600 border-gray-500 border-2 rounded-lg py-3 px-16 text-base font-semibold sm:text-center hover:border-blue-700/30" name="currency" id="crypto-id">
+        <a id="get_started"><label for="select" class="font-semibold block py-5 text-blue-600 text-sm md:text-2xl lg:text-3xl"> SELECT CRYPTO COIN </label></a>
+
+        <select class=" w-11/12 md:max-w-screen-lg lg:w-max h-max text-gray-700 hover:text-blue-600 border-gray-500 border-2 rounded-lg py-3 px-16 text-sm md:text-base lg:text-lg font-semibold sm:text-center hover:border-blue-700/30" name="currency" id="crypto-id">
           <option value="" class="">Choose a Crypto Coin</option>
         </select> 
         </div>
         </div>
 
-        <div class="pt-28">
-          <span class="text-xl text-blue-600" >
+        <div class=" text-xl lg:text-2xl py-3 my-3 mt-20 self-center md:mr-2 lg:mr-0 lg:ml-2 lg:pl-4 lg:mb-8">
+          <span class=" text-blue-600 justify-self-center" >
             <i class="fas fa-exchange-alt"></i>
           </span>
         </div>
@@ -214,30 +170,29 @@
     <!--SELECT COIN 2-->
     <div class="mb-10 p-5">
       <div class="max-w-md mx-auto items-center">
-        <label for="select" class="font-semibold block py-5 text-blue-600 text-2xl"> SELECT CURRENCY </label>
-        <select class=" w-max h-max text-gray-700 hover:text-blue-600 border-gray-500 border-2 rounded-lg py-3 px-16 text-base font-semibold sm:text-center hover:border-blue-700/30" name="currency" id="supported-currency">
+        <label for="select" class="font-semibold block py-5 text-blue-600 text-sm md:text-2xl lg:text-3xl "> SELECT CURRENCY </label>
+        <select class=" w-11/12 md:max-w-screen-lg lg:w-max h-max justify-self-center text-gray-700 hover:text-blue-600 border-gray-500 border-2 rounded-lg py-3 px-16 text-base font-semibold sm:text-center hover:border-blue-700/30" name="currency" id="supported-currency">
           <option value="" class="">Choose a Currency</option>
         </select> 
         </div>
         </div>
+        </div>
+
 
         <!--AMOUNT BOX-->
+<div class="flex flex-col justify-center items-center" >
+  <label for="base-input" class=" justify-self-center mt-2 text-center block text-base md:text-lg lg:text-xl font-semibold md:font-bold text-blue-600 dark:text-blue-600">AMOUNT</label>
 
-<div class="flex justify-center items-center mr-16" >
-  <label for="base-input" class=" justify-center mt-8 pr-2 text-center block text-base font-semibold text-blue-600 dark:text-blue-600">AMOUNT</label>
-
-  <input type="text" id="amount-input" class=" mt-8 flex bg-gray-50 border-2 border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
+  <input type="text" id="amount-input" class=" mt-2 flex w-6/12 md:w-max bg-gray-50 border-2 border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
 </div>
         <!--END AMOUNT BOX-->
 
-</div>
-</div>
- <!--END SELECT COINS SECTION-->
+
 
 
 <!--CONVERT BUTTON-->
 <div class="pb-4 pr-4 pl-4">
-<div class="w-full flex justify-center border-x-8 border-slate-200 border-solid">
+<div class="w-full flex justify-center">
   <button id="#"
     class="flex text-gray-100 justify-center transition duration-200 ease-in-out transform px-4 w-48 border-b-4 border-blue-800 hover:border-b-2 bg-gradient-to-t from-blue-600  via-blue-400 to-blue-600 rounded-2xl hover:translate-y-px py-2 my-10 "
 
@@ -249,10 +204,11 @@
 <!--END CONVERT BUTTON-->
 
 <!--VALUE BOX-->
-<div class="pb-10 flex flex-row justify-center border-b-8 border-x-8 border-slate-200 border-solid" >
-  <label for="base-input" class="mr-3  pt-2 text-center block mb-2 text-base font-semibold text-blue-600 dark:text-blue-600">VALUE</label>
+<div class="pb-10 flex flex-col justify-center items-center border-b-8 border-slate-200 border-solid" >
+  <label for="base-input" class="pt-2 text-center justify-self-center block mb-2 text-base font-semibold md:font-bold text-blue-600 dark:text-blue-600">VALUE</label>
 
-  <input disabled type="text" id="base-input" class=" mr-16 flex border-2 bg-gray-50 border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
+  <input disabled type="text" id="base-input" class=" mt-2 flex w-6/12 md:w-max border-2 bg-gray-50 border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
+</div>
 </div>
 </div>
 </div>
@@ -261,10 +217,10 @@
 <!--END COVERTER SECTION-->
 
  <!--STOCK API SECTION-->
- <section class="flex justify-evenly py-32 px-12 w-full bg-gray-100">
-  <div class="flex flex-col flex-wrap">
-    <h2 class="text-2xl text-blue-600 font-bold tracking-widest my-4 text-left"> MOTAR STOCKS <i class="fas fa-chart-line"></i></h2>
-    <p class="text-gray-700 text-xl font-semibold tracking-normal leading-loose text-left capitalize" >look up any stock's <a class="underline decoration-blue-600 decoration-2 ">End Of Day (EOD) Report.</a> As well as it's open, closed, and its high and low for <a class=" underline decoration-blue-600 decoration-2 ">the current day!</a> If your ready to <span class="font-bold text-blue-800">UP</span> your game on cryptocurrencies and stocks, Just enter the stock <a class="underline decoration2 decoration-blue-600">symbol</a> and hit <a class="underline decoration2 decoration-blue-600">SEARCH!</a></p>
+ <section class="flex justify-evenly flex-col lg:flex-row py-32 px-12 w-full bg-[#ffffff] border-b-8 border-slate-200 border-solid">
+  <div class="flex-col flex-wrap">
+    <h2 class="text-lg md:text-2xl text-blue-600 font-bold tracking-widest my-4 text-left"> MOTAR STOCKS <i class="fas fa-chart-line"></i></h2>
+    <p class="text-gray-700 text-sm md:text-xl lg:text-2xl font-semibold tracking-normal leading-loose text-left capitalize" >look up any stock's <a class="underline decoration-blue-600 decoration-2 ">End Of Day (EOD) Report.</a> As well as it's open, closed, and its high and low for <a class=" underline decoration-blue-600 decoration-2 ">the current day!</a> If your ready to <span class="font-bold text-blue-800">UP</span> your game on cryptocurrencies and stocks, Just enter the stock <a class="underline decoration2 decoration-blue-600">symbol</a> and hit <a class="underline decoration2 decoration-blue-600">SEARCH!</a></p>
   </div>
 
   <div class="w-full mt-4">
@@ -275,208 +231,23 @@
 
       <input type="text" id="stock-symbol" name="stock-ticker" onfocus="this.value=''" class="my-2 mx-8 w-1/2 items-center bg-gray-50 border-2 border-blue-600/80 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-blue-600/80 dark:placeholder-gray-800 dark:text-gray-800 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
 
-      <!-- <input
-        type="text"
-        name="stock-ticker"
-        id="stock-symbol"
-        onfocus="this.value=''"
-        style="margin: 5px; align-self: center;"/> -->
-
         <button id="stock-button" type="button" class=" items-center mt-2 block px-4 py-2 text-base font-medium text-center italic text-white transition duration-500 ease-in-out transform bg-blue-600  rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500 shadow-md shadow-gray-800/80 hover:shadow-blue-300/75"> Search </button>
     </form>
   </div>
 
   <div class="w-full">
-    <h3 id="results" class="text-2xl text-blue-600 font-bold tracking-widest my-4 text-center">Previous Searches <i class="fas fa-arrow-down"></i></h3>
+    <h3 id="results" class="text-2xl text-blue-600 mt-24 lg:mt-4 font-bold tracking-widest my-4 text-center">Previous Searches <i class="fas fa-arrow-down"></i></h3>
     <ul id="symbol-list"></ul>
   </div>
 
 </section>
 
- <!-- <section>
-  <div class="bg-[#ffffff] px-4 py-12 mx-auto max-w-screen-xl sm:px-6 md:px-12 lg:px-24 lg:py-24 2xl:px-12">
-    <div id="stock-header">
-      <h2 class="mb-4 text-xl font-bold ml-2 rounded-xl box-decoration-clone bg-gradient-to-r from-blue-600 to-white text-white px-2 tracking-widest uppercase"> TOP 5 STOCKS </h2>
-      <span class="mb-5 ml-5 text-base font-bold px-1 text-red-700"> Live </span>
-      <span class="animate-ping mb-0.5 relative inline-flex rounded-full h-1 w-1 bg-red-600"></span>
-    </div> -->
-
-
-<!-- <div class="flex flex-col">
-  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-  <div class="inline-block py-2 min-w-full sm:px-6 lg:px-8">
-  <div class="overflow-hidden shadow-md sm:rounded-lg">
-  <table class="min-w-full">
-  <thead class="bg-gray-100 dark:bg-gray-700">
-  <tr> -->
-    
-    <!--STOCK LIST-->
-  <!-- <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-200 uppercase dark:text-gray-200">
-  NAME
-  </th>
-  <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-200 uppercase dark:text-gray-200">
-  SYMBOL
-  </th>
-  <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-200 uppercase dark:text-gray-200">
-  RANK
-  </th>
-  <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-green-500 uppercase dark:text-green-500">
-  PRICE
-  </th>
-  <th scope="col" class="relative py-3 px-6">
-  </th>
-  </tr>
-  </thead>
-  <tbody> -->
-  
-  <!--EACH CATERGORY HAS A UNIQUE "I.D" ATTACHED EX. (STOCK-NAMES) ETC.-->
-
-  <!-- <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
-  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-  <div id="stock-name">
-  BTCBitcoin
-  </div>
-  </td>
-
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-  <div id="stock-symbol">
-  BTC
-  </div>
-  </td>
-
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-  <div id="stock-rank">
-  1ST
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-  <div id="stock-price">
-    43723.90
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-  </td>
-  </tr>
-  
-  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
-  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-    <div id="stock-name">
-    ETHEthereum
-    </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-  <div id="stock-symbol">
-  ETH
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-  <div id="stock-rank">
-  2ND
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-    <div id="stock-price">
-    3359.99
-    </div>
-  </td>
-  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-  </td>
-  </tr>
-  
-  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
-  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-    <div id="stock-name">
-  	BNBBNB
-    </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-  <div id="stock-symbol">
-  BNB
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-  <div id="stock-rank">
-  3RD
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-  <div id="stock-price">
-  	480.26
-    </div>
-  </td>
-  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-  </td>
-  </tr>
-  
-  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
-  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-    <div id="stock-name">
-    Tether
-    </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-    <div id="stock-symbol">
-  USDT
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-    <div id="stock-rank">
-  4TH
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-    <div id="stock-price">
-    1.00
-    </div>
-  </td>
-  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-  </td>
-  </tr>
-  
-  <tr class="odd:bg-white even:bg-gray-50 border-b odd:dark:bg-gray-800 even:dark:bg-gray-700 dark:border-gray-600">
-  <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-    <div id="stock-name">
-    Solana
-    </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-    <div id="stock-symbol">
-  SOL
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-    <div id="stock-rank">
-  5TH
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm text-gray-200 whitespace-nowrap dark:text-gray-200">
-    <div id="stock-price">
-  151.10
-  </div>
-  </td>
-  <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-  </td>
-  </tr>
-  </tbody>
-  </table>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </section> -->
- <!--END STOCK API SECTION-->
-
- <!--END OF THE DAY-->
-
- <!--END OF THE DAY-->
-
 
     <!--FOOTER SECTION-->
-    <footer class="bg-gray-50" aria-labelledby="footer-heading">
+    <footer class="bg-gray-50 w-full " aria-labelledby="footer-heading">
       <h2 id="footer-heading" class="sr-only">Footer</h2>
       <div class="px-5 py-12 mx-auto max-w-7xl lg:py-16 md:px-12 lg:px-20">
-        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+        <div class="sm:grid sm:grid-col md:grid md:grid-cols-3 xl:grid xl:grid-cols-3 xl:gap-8">
           <div class="space-y-8 xl:col-span-1">
             <a id="contact_us" class="
           text-lg

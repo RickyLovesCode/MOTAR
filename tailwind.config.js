@@ -7,10 +7,11 @@ module.exports = {
       sm: '640px',
       md: '768px',
       lg: '1024px',
-      xl: '1700px',
+      xl: '1400px',
       '2xl': '1850px',
       '3xl': '1980px',
       '4xl': '2000px',
+      '5xl': '3850px'
     },
     colors: ({ colors }) => ({
       inherit: colors.inherit,
