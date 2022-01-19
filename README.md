@@ -24,3 +24,6 @@ PLEASE CREATE A NEW BRANCH TO ADD WORK...
 API:
 1-Exchange Rates https://api.coingecko.com/api/v3/exchange_rates
 2-Stock EOD Stats https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=2MTCI3582ZDMK6B2
+
+What is MOTAR?
+Issues MOTAR can resolve...
