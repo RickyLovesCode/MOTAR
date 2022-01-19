@@ -247,7 +247,7 @@ function retrieveStockData() {
   localStorageData = JSON.parse(localStorage.getItem("prevSearch"));
   console.log(localStorageData);
   if (localStorageData === null) {
-     console.log("true")
+    ulEl.innerHTML += "<li style='text-align: center; padding: 5px;  font-weight: bolder;'>No Previous Searches"
   } else {
     for (let i = 0; i < localStorageData.length; i++) {
         ulEl.innerHTML += "<li style='text-align: center; padding: 5px;  font-weight: bolder;'>" + localStorageData[i]
@@ -277,13 +277,10 @@ function getStockEod() {
         for (let key in stockData) {
           ulEl.innerHTML += "<li style='padding: 5px; font-weight: bolder;'>" + key + ": " + stockData[key];
         }
-        if (prevSearchArr.includes(stockSymbol)) {
-            console.log("true")
-        } else {
-            prevSearchArr.push(stockSymbol);
-            prevStock("prevSearch", prevSearchArr);
+        if (!prevSearchArr.includes(stockSymbol)) {
+          prevSearchArr.push(stockSymbol);
+          prevStock("prevSearch", prevSearchArr);
         }
-        
       } else {
         ulEl.innerHTML +=
           "<h3 style='padding: 5px; font-weight: bolder; text-align: center'> This is not a valid stock symbol. Please try again!";
