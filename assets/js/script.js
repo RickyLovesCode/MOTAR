@@ -235,27 +235,35 @@ submitButtonEl.addEventListener("click", getBitExchangeRate);
 var stockTickerEl = document.getElementById("stock-symbol");
 var stockBtnEl = document.getElementById("stock-button");
 var ulEl = document.getElementById("symbol-list");
-var stockSymbol = localStorage.getItem(stockSymbol)
-var stockData;
-var localStorageData
+var stockSymbol;
+var prevSearchArr = [];
+var localStorageData;
 
-function saveStockData(stockSymbol, stockData) {
-  localStorage.setItem(stockSymbol, JSON.stringify(stockData));
+function prevStock(prevSearch, prevSearchArr) {
+  localStorage.setItem(prevSearch, JSON.stringify(prevSearchArr));
 }
 
 function retrieveStockData() {
-   localStorageData = JSON.parse(localStorage.getItem(key))
-   console.log(localStorageData)
+  localStorageData = JSON.parse(localStorage.getItem("prevSearch"));
+  console.log(localStorageData);
+  if (localStorageData === null) {
+     console.log("true")
+  } else {
+    for (let i = 0; i < localStorageData.length; i++) {
+        ulEl.innerHTML += "<li style='text-align: center; padding: 5px;  font-weight: bolder;'>" + localStorageData[i]
+        if (i >= 9) {
+            break
+        }
+    }
+  }
 }
-
+retrieveStockData();
 
 function setStockParameters() {
   while (ulEl.firstChild) {
     ulEl.removeChild(ulEl.firstChild);
   }
-  stockSymbol = stockTickerEl.value;
-  stockSymbol = stockSymbol.trim().toUpperCase();
-//   event.preventDefault();
+  stockSymbol = stockTickerEl.value.trim().toUpperCase();
 }
 
 function getStockEod() {
@@ -263,15 +271,25 @@ function getStockEod() {
   var stockApiUrl = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stockSymbol}&apikey=2MTCI3582ZDMK6B2`;
   fetch(stockApiUrl).then((response) => {
     response.json().then((data) => {
-      let key;
-      stockData = data["Global Quote"];
-      saveStockData(stockSymbol, stockData);
-      for (key in data["Global Quote"]) {
-        ulEl.innerHTML += "<li>" + key + ": " + data["Global Quote"][key];
+      var stockData = data["Global Quote"];
+      if (stockData?.["01. symbol"]) {
+          document.getElementById("results").innerHTML = "Results" + " " + "<i class='fas fa-arrow-down'>"
+        for (let key in stockData) {
+          ulEl.innerHTML += "<li style='padding: 5px; font-weight: bolder;'>" + key + ": " + stockData[key];
+        }
+        if (prevSearchArr.includes(stockSymbol)) {
+            console.log("true")
+        } else {
+            prevSearchArr.push(stockSymbol);
+            prevStock("prevSearch", prevSearchArr);
+        }
+        
+      } else {
+        ulEl.innerHTML +=
+          "<h3 style='padding: 5px; font-weight: bolder; text-align: center'> This is not a valid stock symbol. Please try again!";
       }
     });
   });
-  retrieveStockData()
 }
 
 stockBtnEl.addEventListener("click", getStockEod);
