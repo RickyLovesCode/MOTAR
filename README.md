@@ -22,4 +22,8 @@ PLEASE CREATE A NEW BRANCH TO ADD WORK...
 
 - API:
 1-Exchange Rates https://api.coingecko.com/api/v3/exchange_rates
+<<<<<<< HEAD
 2- 
+=======
+2-Stock EOD Stats https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=2MTCI3582ZDMK6B2
+>>>>>>> 9e0454081b6b2f4cfce1fd0963dad9c3cfc1b2b1
