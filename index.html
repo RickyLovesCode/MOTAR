@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOTAR</title>
-    <link rel="stylesheet" href="assets\css\style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script src="https://kit.fontawesome.com/698395fe77.js" crossorigin="anonymous"></script>
 
     <script>
       tailwind.config = {
@@ -16,26 +16,23 @@
         extend: {
             screens: {
                 'xl': '1700px',
+                '2xl': '1850px',
+                '3xl': '1980px',
+                '4xl': '2000px',
                 // => @media (min-width: 1700px) { ... }
             },
         },
     },
 }
     </script>
-      <!-- <!-- <style type="text/tailwindcss">
-        @layer utilities {
-          .content-auto {
-            content-visibility: auto;
-          }
-        } -->
-      <!-- </style> --> 
+
 </head>
 
 <body>
 
     <!--NAVIGATION-->
 
-    <div class="container w-full max-w-screen-xl">
+    <div class="container w-full max-w-screen-4xl">
       <div x-data="{ open: false }" class="
     flex flex-col
     max-w-screen-3xl
@@ -57,7 +54,8 @@
         transform
         tracking-relaxed
         lg:pr-8
-      " href="index.html"> MOTAR </a>
+        hover:text-blue-500
+      " href="index.html"><i class="fas fa-braille"></i> &nbsp; MOTAR </a>
         </div>
 
         <nav :class="{'flex': open, 'hidden': !open}" class="flex-col items-center flex-grow hidden pb-4 border-blue-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2">
@@ -155,17 +153,17 @@
  <!--MAIN HEADER-->
 
  <section>
-    <div class="bg-[#000000] px-4 py-12 mx-auto max-w-screen-xl sm:px-6 md:px-12 lg:px-24 lg:py-24 2xl:px-12">
+    <div class="bg-[#000000] px-4 py-12 mx-auto max-w-screen-4xl  sm:px-6 md:px-12 lg:px-24 lg:py-24 2xl: 2xl:px-12">
     <div class="flex flex-col items-center mx-auto 2xl:max-w-7xl md:flex-col lg:flex-row">
       <!--MAIN HEADER-->
       <div class="flex flex-col items-start mb-16 text-left lg:flex-grow lg:w-9/12 lg:pr-24 md:mb-0">
 
-        <h1 class="mb-8 py-3 px-4 font-bold leading-none tracking-tighter text-neutral-100/70 text-lg md:text-2xl lg:text-3xl box-decoration-clone bg-gradient-to-b from-black to-blue-600 rounded-3xl"> CRYPTO CURRENCY CONVERTER </h1>
+        <h1 class="mb-8 py-5 px-6 font-bold leading-none tracking-tighter text-neutral-100/70 md:flex md:flex-wrap md:text-2xl box-decoration-clone bg-gradient-to-b from-black to-blue-600 rounded-3xl"> CRYPTO CURRENCY CONVERTER </h1>
 
-        <span class="mb-8 text-sm pl-1 font-bold tracking-widest text-blue-600 uppercase"> HOW TO USE </span>
+        <span class="mb-8 py-2 text-lg pl-1 font-bold tracking-widest text-blue-600 uppercase"> HOW TO USE </span>
 
-        <p class="flex flex-wrap mb-8 sm:text-sm md:text-lg lg:text-2xl font-semibold leading-relaxed text-left text-gray-400 whitespace-normal"> 
-          MOTAR is a cryptocurrency converter which can be used to convert popular cryptocurrencies, such as Bitcoin and Etherum, to different cryptocurrencies and international currencies. All you need to do is choose from a list of provided cryptocurrencies and select the currency that you will like to know the conversion rate for a MOTAR does the rest.  You can also specify an amount, for example how is 2 bitcoins in US Dollar. MOTAR can do this for you! Hit the Get Started button below to begin!</p>
+        <p class="flex flex-wrap mb-8 md:text-xl lg:text-2xl font-semibold text-left text-gray-400 whitespace-normal antialiased tracking-wide capitalize"> 
+          This cryptocurrency converter can be used to convert cryptocurrencies, such as Bitcoin and Etherum, to different cryptocurrencies and <span class="italic">international currencies.</span><br>All you need to do is choose from a list of cryptocurrencies and select the currency that you wish to convert. You can also specify an amount, for example how much is 2 bitcoins in US Dollars. Hit the Get Started button below to begin!</p>
         <div class="mt-0 lg:mt-6 max-w-7xl sm:flex">
           <div class="mt-3 rounded-lg sm:mt-0">
         <!--END MAIN HEADER-->
@@ -197,21 +195,27 @@
   <div class="bg-[#ffffff] pt-8  pl-4 pr-4 mt-10">
 
             <!--SELECT COIN 1-->
-  <div class="flex flex-row justify-evenly border-t-8 border-x-8 border-slate-200 border-solid">
+  <div class="flex flex-row flex-wrap justify-evenly border-t-8 border-x-8 border-slate-200 border-solid">
     <div class="-mb-10 p-5">
-      <div class="max-w-md mx-auto">
-        <a id="get_started"><label for="select" class="font-semibold block py-5 text-blue-600 text-2xl"> SELECT A CRYPTO COIN </label></a>
-        <select class=" w-max h-max border-gray-400 border-2 rounded-lg py-5 px-16 text-sm font-normal sm:text-center hover:border-blue-700/30" name="currency" id="crypto-id">
-          <option value="" class="">Choose a Crypto Currency</option>
+      <div class="max-w-md mx-auto items-center">
+        <a id="get_started"><label for="select" class="font-semibold block py-5 text-blue-600 text-2xl"> SELECT CRYPTO COIN </label></a>
+        <select class=" w-max h-max text-gray-700 hover:text-blue-600 border-gray-500 border-2 rounded-lg py-3 px-16 text-base font-semibold sm:text-center hover:border-blue-700/30" name="currency" id="crypto-id">
+          <option value="" class="">Choose a Crypto Coin</option>
         </select> 
         </div>
         </div>
 
+        <div class="pt-28">
+          <span class="text-xl text-blue-600" >
+            <i class="fas fa-exchange-alt"></i>
+          </span>
+        </div>
+
     <!--SELECT COIN 2-->
     <div class="mb-10 p-5">
-      <div class="max-w-md mx-auto">
+      <div class="max-w-md mx-auto items-center">
         <label for="select" class="font-semibold block py-5 text-blue-600 text-2xl"> SELECT CURRENCY </label>
-        <select class=" w-max h-max border-gray-400 border-2 rounded-lg py-5 px-16 text-sm font-normal sm:text-center hover:border-blue-700/30" name="currency" id="supported-currency">
+        <select class=" w-max h-max text-gray-700 hover:text-blue-600 border-gray-500 border-2 rounded-lg py-3 px-16 text-base font-semibold sm:text-center hover:border-blue-700/30" name="currency" id="supported-currency">
           <option value="" class="">Choose a Currency</option>
         </select> 
         </div>
@@ -219,10 +223,10 @@
 
         <!--AMOUNT BOX-->
 
-<div class="flex mb-6 justify-end items-center" >
-  <label for="base-input" class=" mt-8 pr-2 text-center block text-base font-semibold text-blue-600 dark:text-blue-600">AMOUNT</label>
+<div class="flex justify-center items-center mr-16" >
+  <label for="base-input" class=" justify-center mt-8 pr-2 text-center block text-base font-semibold text-blue-600 dark:text-blue-600">AMOUNT</label>
 
-  <input type="text" id="amount-input" class=" mt-8 flex bg-gray-50 border-2 border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-gray-400 dark:placeholder-gray-400 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
+  <input type="text" id="amount-input" class=" mt-8 flex bg-gray-50 border-2 border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
 </div>
         <!--END AMOUNT BOX-->
 
@@ -248,44 +252,45 @@
 <div class="pb-10 flex flex-row justify-center border-b-8 border-x-8 border-slate-200 border-solid" >
   <label for="base-input" class="mr-3  pt-2 text-center block mb-2 text-base font-semibold text-blue-600 dark:text-blue-600">VALUE</label>
 
-  <input disabled type="text" id="base-input" class=" mr-16 flex border-2 bg-gray-50 border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-gray-400 dark:placeholder-gray-400 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
+  <input disabled type="text" id="base-input" class=" mr-16 flex border-2 bg-gray-50 border-gray-300 text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 dark:text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
+</div>
 </div>
 </div>
 <!--END VALUE BOX-->
 
- <!--END COVERTER SECTION-->
+<!--END COVERTER SECTION-->
 
  <!--STOCK API SECTION-->
- <section style="display: flex; justify-content: space-evenly;">
-  <div style="display: flex; flex-basis: 25%; flex-direction: column;">
-    <h2>MOTAR STOCKS</h2>
-    <p>MOTAR allows you to look up stock symbols in order to see how that stock’s End Od Day statistics. Such as what it open at, closed at, and its high and low! If you are ready to up your game on cryptocurrencies and stocks, MOTAR has you covered. Just enter the stock symbol you wish to look up and hit submit! </p>
+ <section class="flex justify-evenly py-32 px-12 w-full bg-gray-100">
+  <div class="flex flex-col flex-wrap">
+    <h2 class="text-2xl text-blue-600 font-bold tracking-widest my-4 text-left"> MOTAR STOCKS <i class="fas fa-chart-line"></i></h2>
+    <p class="text-gray-700 text-xl font-semibold tracking-normal leading-loose text-left capitalize" >look up any stock's <a class="underline decoration-blue-600 decoration-2 ">End Of Day (EOD) Report.</a> As well as it's open, closed, and its high and low for <a class=" underline decoration-blue-600 decoration-2 ">the current day!</a> If your ready to <span class="font-bold text-blue-800">UP</span> your game on cryptocurrencies and stocks, Just enter the stock <a class="underline decoration2 decoration-blue-600">symbol</a> and hit <a class="underline decoration2 decoration-blue-600">SEARCH!</a></p>
   </div>
-  <div style = "display: flex; flex-direction: column;">
-    <h3 style="margin: 10px; align-self: center;">Stock End of Day</h3>
-    <form id="stock-eod" style="display: flex;
-    flex-direction: column; margin: 10px;">
-      <label style="align-self: center; margin: 5px;" for="stock-ticker">Stock Ticker</label>
-      <input
+
+  <div class="w-full mt-4">
+    <form id="stock-eod" class="flex flex-col mt-8 items-center">
+
+      <label class="mb-2 text-center text-2xl text-blue-600/90 font-bold" for="stock-ticker"><i class="fas fa-search-dollar"></i></label>
+
+
+      <input type="text" id="stock-symbol" name="stock-ticker" onfocus="this.value=''" class="my-2 mx-8 w-1/2 items-center bg-gray-50 border-2 border-blue-600/80 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-blue-600/80 dark:placeholder-gray-800 dark:text-gray-800 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
+
+      <!-- <input
         type="text"
         name="stock-ticker"
         id="stock-symbol"
         onfocus="this.value=''"
-        style="margin: 5px; align-self: center;"
-      />
-      <button type="button" id="stock-button" style="align-self: center; margin: 5px;">Submit</button>
+        style="margin: 5px; align-self: center;"/> -->
+
+        <button id="stock-button" type="button" class=" items-center mt-2 block px-4 py-2 text-base font-medium text-center italic text-white transition duration-500 ease-in-out transform bg-blue-600  rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500 shadow-md shadow-gray-800/80 hover:shadow-blue-300/75"> Search </button>
     </form>
   </div>
-  <div>
-    <h3>Stock 1</h3>
+
+  <div class="w-full ">
+    <h3 class="text-2xl text-blue-600 font-bold tracking-widest my-4 text-center">Results <i class="fas fa-arrow-down"></i></h3>
     <ul id="symbol-list"></ul>
   </div>
-  <!-- <div>
-    <h3>Stock 2</h3>
-  </div>
-  <div>
-    <h3>Stock 3</h3>
-  </div> -->
+
 </section>
 
  <!-- <section>
@@ -462,6 +467,10 @@
   </section> -->
  <!--END STOCK API SECTION-->
 
+ <!--END OF THE DAY-->
+
+ <!--END OF THE DAY-->
+
 
     <!--FOOTER SECTION-->
     <footer class="bg-gray-50" aria-labelledby="footer-heading">
@@ -569,16 +578,10 @@
               <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
             </svg>
           </a>
-          <a href="#" class="text-blue-600 hover:text-gray-500">
+          <a href="https://github.com/RickyLovesCode/MOTAR" target="blank" class="text-blue-600 hover:text-gray-500">
             <span class="sr-only">GitHub</span>
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
-            </svg>
-          </a>
-          <a href="#" class="text-blue-600 hover:text-gray-500">
-            <span class="sr-only">LINKED IN</span>
-            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd"></path>
             </svg>
           </a>
         </div>
@@ -588,15 +591,11 @@
       </div>
     </footer>
   
-    <!--END FOOTER SECTION-->  
+    <!-- END FOOTER SECTION   -->
 
-    <!-- <script>
-      $(window).on("load",function() {
-        $(".loader-wrapper").fadeOut("fast");
-
-      });
-    </script> -->
     <script src="./assets/js/script.js"></script>
+    <link rel="stylesheet" href="assets\css\style.css" />
+
 
 </body>
 </html>
