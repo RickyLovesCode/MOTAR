@@ -286,7 +286,7 @@ function getStockEod() {
         
       } else {
         ulEl.innerHTML +=
-          "<h3> This is not a valid stock symbol. Please try again!";
+          "<h3 style='padding: 5px; font-weight: bolder; text-align: center'> This is not a valid stock symbol. Please try again!";
       }
     });
   });
