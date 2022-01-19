@@ -229,7 +229,7 @@
       <label class="mb-2 text-center text-2xl text-blue-600/90 font-bold" for="stock-ticker"><i class="fas fa-search-dollar"></i></label>
 
 
-      <input type="text" id="stock-symbol" name="stock-ticker" onfocus="this.value=''" class="my-2 mx-8 w-1/2 items-center bg-gray-50 border-2 border-blue-600/80 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-blue-600/80 dark:placeholder-gray-800 dark:text-gray-800 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
+      <input type="text" id="stock-symbol" name="stock-ticker" onfocus="this.value=''" onkeypress="return event.keyCode != 13" class="my-2 mx-8 w-1/2 items-center bg-gray-50 border-2 border-blue-600/80 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-white dark:border-blue-600/80 dark:placeholder-gray-800 dark:text-gray-800 dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:border-blue-700/30">
 
         <button id="stock-button" type="button" class=" items-center mt-2 block px-4 py-2 text-base font-medium text-center italic text-white transition duration-500 ease-in-out transform bg-blue-600  rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500 shadow-md shadow-gray-800/80 hover:shadow-blue-300/75"> Search </button>
     </form>
